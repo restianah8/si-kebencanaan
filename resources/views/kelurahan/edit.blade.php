@@ -32,7 +32,7 @@
                                     <label for="id">Kecamatan:</label>
                                     <select name="id_kecamatan" id="id" class="form-control">
                                         @foreach ($kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        <option value="{{ $item->id }}" @if ($item->id == $kelurahan->id_kecamatan) selected="selected" @endif>{{ $item->nama }}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -34,25 +34,22 @@
             <thead>
               <tr>
                 <th>id</th>
-                <th>id_kabupaten</th>
+                <th>Kabupaten</th>
                 <th>Nama Kecamatan</th>
                 <th>Aksi</th>
               </tr>
             </thead>
-            @php
-            $no = '1'
-             @endphp
-            @foreach ($kecamatan as $kcmt)
+            @foreach ($kecamatan as $item)
             <tbody>
 
               <tr>
-                <td>{{$no++}}</td>
-                <td>{{$kcmt->nama}}</td>
-                <td>{{$kcmt->nama}}</td>
+                <td>{{ ($loop->index + 1) }}</td>
+                <td>{{$item->nama}}</td>
+                <td>{{$item->nama}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="/dashboard/kecamatan/hapus/{{ $kcmt->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/kecamatan/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/kecamatan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 

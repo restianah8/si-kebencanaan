@@ -2,6 +2,7 @@
 
 @section('title')
     Edit Data Kecamatan
+@endsection
 
 @section('content')
 <div class="breadcrumbs">
@@ -26,6 +27,15 @@
                               <form action="/dashboard/kecamatan/edit/{{ $kecamatan->id }}" method="post" novalidate="novalidate">
                                 @csrf
                                 @method('PUT')
+
+                                <div class="form-group">
+                                    <label for="kab">Kabupaten</label>
+                                    <select name="id_kabupaten" id="kab" class="form-control">
+                                        @foreach ($kabupaten as $item)
+                                            <option value="{{ $item->id }}" @if ($item->id == $kecamatan->id_kabupaten) selected="selected" @endif>{{ $item->nama }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="nama">Nama kecamatan:</label>

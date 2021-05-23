@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class KecamatanController extends Controller
      */
     public function index()
     {
-        $kecamatan = Kecamatan::all();
+        $kecamatan = Kecamatan::with('kabupaten')->get();
 
         return view('kecamatan.index', compact('kecamatan'));
     }
@@ -26,7 +27,9 @@ class KecamatanController extends Controller
      */
     public function create()
     {
-        return view('kecamatan.create');
+        $kabupaten = Kabupaten::all();
+
+        return view('kecamatan.create', compact('kabupaten'));
     }
 
     /**
@@ -41,6 +44,7 @@ class KecamatanController extends Controller
 
         $kecamatan = new Kecamatan; //manggil model kecamatan
         $kecamatan->nama = $nama;
+        $kecamatan->id_kabupaten = $request->id_kabupaten;
         $kecamatan->save();
 
         return redirect()
@@ -67,8 +71,9 @@ class KecamatanController extends Controller
      */
     public function edit(Kecamatan $kecamatan)
     {
+        $kabupaten = Kabupaten::all();
 
-        return view('kecamatan.edit', compact('kecamatan'));
+        return view('kecamatan.edit', compact('kabupaten', 'kecamatan'));
     }
 
     /**
@@ -80,7 +85,16 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, Kecamatan $kecamatan)
     {
-        //
+
+        $nama = $request->nama;
+
+        $kecamatan->nama = $nama;
+        $kecamatan->id_kabupaten = $request->id_kabupaten;
+        $kecamatan->save();
+
+        return redirect()
+            ->to('/dashboard/kecamatan')
+            ->withSuccess('Berhasil mengubah data');
     }
 
     /**
