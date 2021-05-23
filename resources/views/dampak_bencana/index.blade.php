@@ -46,8 +46,8 @@
                   <td>{{$dbn->nama}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/dampak_bencana/edit/{{ $dbn->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/dampak_bencana/hapus/{{ $dbn->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 

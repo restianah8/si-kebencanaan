@@ -44,7 +44,7 @@
 
               <tr>
                 <td>{{ ($loop->index + 1) }}</td>
-                <td>{{$item->nama}}</td>
+                <td>{{$item->kabupaten->nama}}</td>
                 <td>{{$item->nama}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>

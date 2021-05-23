@@ -64,9 +64,9 @@ class Jenis_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Jenis_bencana $jenis_bencana)
     {
-        //
+        return view('jenis_bencana.edit', compact('jenis_bencana'));
     }
 
     /**
@@ -76,15 +76,22 @@ class Jenis_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Jenis_bencana $jenis_bencana)
     {
-        //
+        $nama = $request->nama;
+
+        $jenis_bencana->nama = $nama;
+        $jenis_bencana->save();
+
+        return redirect()
+            ->to('/dashboard/jenis_bencana')
+            ->withSuccess('Berhasil mengubah data');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+      * @param  \App\Models\Jenis_bencana  $jenis_bencana
      * @return \Illuminate\Http\Response
      */
     public function destroy(Jenis_bencana $jenis_bencana)

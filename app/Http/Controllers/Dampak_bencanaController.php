@@ -64,9 +64,9 @@ class Dampak_bencanaController extends Controller
       * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dampak_bencana $dampak_bencana)
     {
-        //
+        return view('dampak_bencana.edit', compact('dampak_bencana'));
     }
 
     /**
@@ -76,15 +76,22 @@ class Dampak_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dampak_bencana $dampak_bencana)
     {
-        //
+        $nama = $request->nama;
+
+        $dampak_bencana->nama = $nama;
+        $dampak_bencana->save();
+
+        return redirect()
+            ->to('/dashboard/dampak_bencana')
+            ->withSuccess('Berhasil mengubah data');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+      * @param  \App\Models\Dampak_bencana  $dampak_bencana
      * @return \Illuminate\Http\Response
      */
     public function destroy(Dampak_bencana $dampak_bencana)
