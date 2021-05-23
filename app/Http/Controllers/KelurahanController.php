@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kecamatan;
 use App\Models\Kelurahan;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class KelurahanController extends Controller
      */
     public function index()
     {
-        $kelurahan = Kelurahan::all();
+        $kelurahan = Kelurahan::with('kecamatan')->get();
+
         return view('kelurahan.index',compact('kelurahan'));
     }
 
@@ -25,7 +27,9 @@ class KelurahanController extends Controller
      */
     public function create()
     {
-        return view('kelurahan.create');
+        $kecamatan = Kecamatan::all();
+
+        return view('kelurahan.create', compact('kecamatan'));
     }
 
     /**
@@ -41,6 +45,7 @@ class KelurahanController extends Controller
 
         $kelurahan = new Kelurahan(); //manggil model kecamatan
         $kelurahan->nama = $nama;
+        $kelurahan->id_kecamatan = $request->id_kecamatan;
         $kelurahan->save();
 
         return redirect()
@@ -65,9 +70,11 @@ class KelurahanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kelurahan $kelurahan)
     {
-        //
+        $kecamatan = Kecamatan::all();
+
+        return view('kelurahan.edit', compact('kecamatan', 'kelurahan'));
     }
 
     /**
@@ -77,9 +84,17 @@ class KelurahanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kelurahan $kelurahan)
     {
-        //
+        $nama = $request->nama;
+
+        $kelurahan->nama = $nama;
+        $kelurahan->id_kecamatan = $request->id_kecamatan;
+        $kelurahan->save();
+
+        return redirect()
+            ->to('/dashboard/kelurahan')
+            ->withSuccess('Berhasil mengubah data');
     }
 
     /**

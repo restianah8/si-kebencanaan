@@ -10,4 +10,8 @@ class Kelurahan extends Model
     use HasFactory;
     public $table = 'kelurahan';
     public $timestamps = false;
+
+    public function kecamatan() {
+        return $this->HasOne(Kecamatan::class, 'id', 'id_kecamatan');
+    }
 }

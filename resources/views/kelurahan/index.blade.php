@@ -34,24 +34,24 @@
             <thead>
               <tr>
                   <th>id</th>
-                <th>id_kecamatan</th>
+                <th>Kecamatan</th>
                 <th>kelurahan/Desa</th>
                 <th>Aksi</th>
               </tr>
               @php
               $no = '1'
                @endphp
-              @foreach ($kelurahan as $klrhn)
+              @foreach ($kelurahan as $item)
               <tbody>
 
                 <tr>
                   <td>{{$no++}}</td>
-                  <td>{{$klrhn->id}}</td>
-                  <td>{{$klrhn->nama}}</td>
+                  <td>{{ $item->kecamatan->nama }}</td>
+                  <td>{{$item->nama}}</td>
                     <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="/dashboard/kelurahan/hapus/{{ $klrhn->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/kelurahan/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/kelurahan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
 
               </tr>

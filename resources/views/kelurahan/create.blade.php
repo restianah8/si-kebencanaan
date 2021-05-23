@@ -28,8 +28,12 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="id">id_kecamatan:</label>
-                                    <input type="text" name="id_kecamatan" id="id_kecamatan" class="form-control" required="required">
+                                    <label for="id">Kecamatan:</label>
+                                    <select name="id_kecamatan" id="id" class="form-control">
+                                        @foreach ($kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama kelurahan:</label>
