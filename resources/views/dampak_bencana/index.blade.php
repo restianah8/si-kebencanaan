@@ -32,22 +32,24 @@
             <thead>
               <tr>
                 <th>id</th>
+                <th>jenis bencana</th>
                 <th>Nama Dampak Bencana</th>
                 <th>Aksi</th>
               </tr>
               @php
               $no = '1'
                @endphp
-              @foreach ($dampak_bencana as $dbn)
+              @foreach ($dampak_bencana as $item)
               <tbody>
 
                 <tr>
                   <td>{{$no++}}</td>
-                  <td>{{$dbn->nama}}</td>
+                  <td>{{$item->jenis_bencana->nama}}</td>
+                  <td>{{$item->nama}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="/dashboard/dampak_bencana/edit/{{ $dbn->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="/dashboard/dampak_bencana/hapus/{{ $dbn->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/dampak_bencana/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/dampak_bencana/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 

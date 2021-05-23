@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dampak_bencana;
+use App\Models\Jenis_bencana;
 use Illuminate\Http\Request;
 
 class Dampak_bencanaController extends Controller
@@ -14,7 +15,7 @@ class Dampak_bencanaController extends Controller
      */
     public function index()
     {
-        $dampak_bencana = Dampak_bencana::all();
+        $dampak_bencana = Dampak_bencana::with('jenis_bencana')->get();
         return view('dampak_bencana.index',compact('dampak_bencana'));
     }
 
@@ -25,7 +26,8 @@ class Dampak_bencanaController extends Controller
      */
     public function create()
     {
-        return view('dampak_bencana.create');
+        $jenis_bencana = Jenis_bencana::all();
+        return view('dampak_bencana.create',compact('jenis_bencana'));
     }
 
     /**
@@ -40,6 +42,7 @@ class Dampak_bencanaController extends Controller
 
         $dampak_bencana = new Dampak_bencana(); //manggil model dampak bencana
         $dampak_bencana->nama = $nama;
+        $dampak_bencana->id_jenis_bencana = $request->id_jenis_bencana;
         $dampak_bencana->save();
 
         return redirect()
@@ -66,7 +69,8 @@ class Dampak_bencanaController extends Controller
      */
     public function edit(Dampak_bencana $dampak_bencana)
     {
-        return view('dampak_bencana.edit', compact('dampak_bencana'));
+        $jenis_bencana = Jenis_bencana::all();
+        return view('dampak_bencana.edit', compact('jenis_bencana','dampak_bencana'));
     }
 
     /**
@@ -81,6 +85,7 @@ class Dampak_bencanaController extends Controller
         $nama = $request->nama;
 
         $dampak_bencana->nama = $nama;
+        $dampak_bencana->id_jenis_bencana = $request->id_jenis_bencana;
         $dampak_bencana->save();
 
         return redirect()

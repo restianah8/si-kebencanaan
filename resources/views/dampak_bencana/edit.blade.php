@@ -29,6 +29,14 @@
                                 @method('PUT')
 
                                 <div class="form-group">
+                                    <label for="kab">jenis_bencana:</label>
+                                    <select name="id_jenis_bencana" id="kab" class="form-control">
+                                        @foreach ($jenis_bencana as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        @endforeach
+                                    </select>
+
+                                <div class="form-group">
                                     <label for="nama">Nama dampak_bencana:</label>
                                     <input type="text" name="nama" value="{{ $dampak_bencana->nama }}" id="nama" class="form-control" required="required">
                                 </div>

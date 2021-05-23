@@ -15,7 +15,12 @@ class CreateDampakBencanasTable extends Migration
     {
         Schema::create('dampak_bencana', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_jenis_bencana')->nullable();
             $table->string('nama',70);
+
+            $table->foreign('id_jenis_bencana')->references('id')->on('jenis_bencana')
+            ->onUpdate('no action')
+            ->onDelete('cascade');
         });
     }
 

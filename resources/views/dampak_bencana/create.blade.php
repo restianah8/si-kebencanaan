@@ -26,6 +26,14 @@
                           <div class="card-body">
                               <form action="/dashboard/dampak_bencana/tambah" method="post" novalidate="novalidate">
                                 @csrf
+
+                                <div class="form-group">
+                                    <label for="kab">jenis_bencana:</label>
+                                    <select name="id_jenis_bencana" id="kab" class="form-control">
+                                        @foreach ($jenis_bencana as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        @endforeach
+                                    </select>
                                 <div class="col-md-7">
                                 <div class="form-group">
                                     <label for="nama">Nama  dampak Bencana:</label>

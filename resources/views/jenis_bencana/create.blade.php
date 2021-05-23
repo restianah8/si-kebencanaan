@@ -26,6 +26,8 @@
                           <div class="card-body">
                               <form action="/dashboard/jenis_bencana/tambah" method="post" novalidate="novalidate">
                                 @csrf
+
+                               
                                 <div class="col-md-7">
                                 <div class="form-group">
                                     <label for="nama">Nama Bencana:</label>
