@@ -31,7 +31,7 @@
                          </ul>
                     </li>
                     <li>
-
+  
                     <li class="menu-item-has-children dropdown">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="menu-icon fa fa-table"></i>Korban Bencana</a>

@@ -68,6 +68,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
     //star Kejadian BEncana
     Route::get('/kejadian_bencana',[Kejadian_bencanaController::class, 'index']);
+    Route::get('/kejadian_bencana/tambah', [Kejadian_bencanaController::class, 'create']);
+    Route::post('/kejadian_bencana/tambah', [Kejadian_bencanaController::class, 'store']);
+    Route::get('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'edit']);
+    Route::put('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'update']);
+    Route::get('/kejadian_bencana/hapus/{kejadian_bencana}', [Kejadian_bencanaController::class, 'destroy']);
 
     //star dampak bencana
     Route::get('/dampak_bencana',[Dampak_bencanaController::class, 'index']);

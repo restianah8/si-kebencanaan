@@ -15,7 +15,7 @@
     </div>
         <div class="col-sm-12">
          <div class="page-header float-right mt-2">
-        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+        <a href="/dashboard/kejadian_bencana/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
     </div>
 </div>
 
@@ -36,35 +36,46 @@
                                 <th>id</th>
                                 <th>id_jenis bencana</th>
                                 <th>id_kabupaten</th>
+                                <th>id_kecamatan</th>
+                                <th>id_kelurahan</th>
                                 <th>Tanggal </th>
                                 <th>Waktu </th>
                                 <th>Lokasi</th>
-
+                                <th>akibat</th>
+                                <th>penyebab</th>
+                                <th>keterangan</th>
                                 <th>Tksir Kerugian</th>
                                 <th>Aksi</th>
                               </tr>
                             </thead>
-                            <tbody>
-                                @php
-                                    $no = '1'
-                                @endphp
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                        @foreach ($kejadian_bencana as $item)
+
+                        <tbody>
+
+                          <tr>
+                            <td>{{ ($loop->index + 1) }}</td>
+                            <td>{{ $item->jenis_bencana->nama }}</td>
+                            <td>{{ $item->kabupaten->nama }}</td>
+                            <td>{{ $item->kecamatan->nama }}</td>
+                            <td>{{ $item->kelurahan->nama }}</td>
+                                <td>{{ $item->tanggal }}</td>
+                                <td>{{ $item->waktu }}</td>
+                                <td>{{ $item->lokasi }}</td>
+                                <td>{{ $item->akibat }}</td>
+                                <td>{{ $item->penyebab }}</td>
+                                <td>{{ $item->keterangan }}</td>
+                                <td>{{ $item->taksir_keugian }}</td>
 
                                 <td>
                                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                                    <a href="" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                                    <a href="" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                                    <a href="/dashboard/kejadian_bencana/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                                    <a href="/dashboard/kejadian_bencana/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                                 </td>
                               </tr>
 
                             </tbody>
+                            @endforeach
+
                           </table>
                     </div>
                 </div>

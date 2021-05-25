@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jenis_bencana;
+use App\Models\Kabupaten;
+use App\Models\Kecamatan;
+use App\Models\Kejadian_bencana;
+use App\Models\Kelurahan;
 use Illuminate\Http\Request;
 
 class Kejadian_bencanaController extends Controller
@@ -13,7 +18,9 @@ class Kejadian_bencanaController extends Controller
      */
     public function index()
     {
-        return view('kejadian_bencana.index');
+        $kejadian_bencana = Kejadian_bencana::with('jenis_bencana','kabupaten','kecamatan','kelurahan')->get();
+
+        return view('kejadian_bencana.index',compact('kejadian_bencana'));
     }
 
     /**
@@ -23,7 +30,12 @@ class Kejadian_bencanaController extends Controller
      */
     public function create()
     {
-        //
+        $jenis_bencana = Jenis_bencana::all();
+        $kabupaten = Kabupaten::all();
+        $kecamatan = Kecamatan::all();
+        $kelurahan = Kelurahan::all();
+
+        return view('kejadian_bencana.create', compact('jenis_bencana','kabupaten','kecamatan','kelurahan'));
     }
 
     /**
@@ -34,13 +46,23 @@ class Kejadian_bencanaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $kejadian_bencana = new Kejadian_bencana(); //manggil model kecamatan
+        $kejadian_bencana->id_jenis_bencana = $request->id_jenis_bencana;
+        $kejadian_bencana->id_kabupaten = $request->id_kabupaten;
+        $kejadian_bencana->id_kecamatan = $request->id_kecamatan;
+        $kejadian_bencana->id_kelurahan = $request->id_kelurahan;
+        $kejadian_bencana->save();
+
+        return redirect()
+            ->to('/dashboard/kejadian_encana')
+            ->withSuccess('Berhasil menambah data');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+    *  @param  \App\Models\Kejadian_bencana  $kejadian_bencana
      * @return \Illuminate\Http\Response
      */
     public function show($id)
