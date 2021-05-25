@@ -34,6 +34,7 @@ class CreateKejadianBencanasTable extends Migration
             $table->foreign('id_jenis_bencana')->references('id')->on('jenis_bencana')
             ->onUpdate('no action')
             ->onDelete('cascade');
+            
             $table->foreign('id_kabupaten')->references('id')->on('kabupaten')
             ->onUpdate('no action')
             ->onDelete('set null');

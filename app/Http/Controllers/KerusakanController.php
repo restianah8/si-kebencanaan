@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dampak_bencana;
+use App\Models\Kejadian_bencana;
+use App\Models\kerusakan;
 use Illuminate\Http\Request;
 
 class KerusakanController extends Controller
@@ -13,7 +16,8 @@ class KerusakanController extends Controller
      */
     public function index()
     {
-        return view('kerusakan.index');
+        $kerusakan = kerusakan::with('kejadian_bencana','dampak_bencana')->get();
+        return view('kerusakan.index',compact('kerusakan'));
     }
 
     /**
@@ -23,7 +27,11 @@ class KerusakanController extends Controller
      */
     public function create()
     {
-        //
+        $kejadian_bencana = Kejadian_bencana::all();
+        $dampak_bencana = Dampak_bencana::all();
+
+
+        return view('kerusakan.create', compact('kejadian_bencana','dampak_bencana'));
     }
 
     /**
@@ -34,7 +42,17 @@ class KerusakanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama = $request->nama;
+
+        $kerusakan = new kerusakan(); //manggil model kecamatan
+        $kerusakan->nama = $nama;
+        $kerusakan->id_kejadian_bencana = $request->id_kejadian_bencana;
+        $kerusakan->id_dampak_bencana = $request->id_dampak_bencana;
+        $kerusakan->save();
+
+        return redirect()
+            ->to('/dashboard/kerusakan')
+            ->withSuccess('Berhasil menambah data');
     }
 
     /**

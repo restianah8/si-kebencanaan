@@ -1,5 +1,5 @@
 <script src="{{asset('template/assets/js/vendor/jquery-2.1.4.min.js')}}></script>
-<script src="{{asset('template/assets/js/popper.min.js')}}"></script>
+<script src="{{asset('template/assets/js/popper.min.js')}}></script>
 <script src="{{asset('template/assets/js/plugins.js')}}"></script>
 <script src="{{asset('template/assets/js/main.js')}}"></script>
 

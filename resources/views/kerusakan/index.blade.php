@@ -34,7 +34,6 @@
                 <th>id</th>
                 <th>id_kejadian bencana</th>
                 <th>id_dampak bencana</th>
-                <th>Nama kerusakan</th>
                 <th>RB</th>
                 <th>RS</th>
                 <th>RR</th>
@@ -49,7 +48,6 @@
                 <td>1</td>
                 <td>1</td>
                 <td>1</td>
-                <td>Rumah</td>
                 <td>1</td>
                 <td>1</td>
                 <td>1</td>
