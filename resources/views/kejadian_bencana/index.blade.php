@@ -64,7 +64,7 @@
                                 <td>{{ $item->akibat }}</td>
                                 <td>{{ $item->penyebab }}</td>
                                 <td>{{ $item->keterangan }}</td>
-                                <td>{{ $item->taksir_keugian }}</td>
+                                <td>{{ $item->taksir_kerugian }}</td>
 
                                 <td>
                                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>

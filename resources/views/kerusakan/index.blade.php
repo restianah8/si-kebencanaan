@@ -14,7 +14,7 @@
     </div>
     <div class="col-sm-12">
         <div class="page-header float-right mt-2">
-        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+        <a href="/dashboard/kerusakan/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
     </div>
 </div>
 
@@ -40,25 +40,25 @@
                 <th>Aksi</th>
               </tr>
             </thead>
-            <tbody>
-                @php
-                    $no = '1'
-                @endphp
-              <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+             @foreach ($kerusakan as $item)
+             <tbody>
+
+             <tr>
+            <td>{{ ($loop->index + 1) }}</td>
+            <td>{{$item->kejadian_bencana->id}}</td>
+            <td>{{$item->dampak_bencana->nama}}</td>
+            <td>{{$item->nama}}</td>
+            <td>{{$item->nama}}</td>
+            <td>{{$item->nama}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/kerusakan/id/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/kerusakan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 
             </tbody>
+            @endforeach
           </table>
                 </div>
             </div>

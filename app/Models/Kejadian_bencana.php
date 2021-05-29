@@ -9,7 +9,11 @@ class Kejadian_bencana extends Model
 {
     use HasFactory;
     public $table = 'kejadian_bencana';
+    protected $fillable = [
+        'id_jenis_bencana','id_kabupaten','id_kecamatan','id_kelurahan','tanggal','waktu','lokasi','akibat','penyebab','kronologis','keterangan','taksir_kerugian'
+    ];
     public $timestamps = false;
+
 
     public function jenis_bencana() {
         return $this->HasOne(jenis_bencana::class, 'id', 'id_jenis_bencana');

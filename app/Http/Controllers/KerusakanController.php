@@ -40,14 +40,16 @@ class KerusakanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, kerusakan $kerusakan)
     {
         $nama = $request->nama;
 
         $kerusakan = new kerusakan(); //manggil model kecamatan
-        $kerusakan->nama = $nama;
         $kerusakan->id_kejadian_bencana = $request->id_kejadian_bencana;
         $kerusakan->id_dampak_bencana = $request->id_dampak_bencana;
+        $kerusakan->RB = $request->input('RB');
+        $kerusakan->RS= $request->input('RS');
+        $kerusakan->RR = $request->input('RR');
         $kerusakan->save();
 
         return redirect()
@@ -58,7 +60,7 @@ class KerusakanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     *  @param  \App\Models\Kerusakan  $kerusakan
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,9 +86,19 @@ class KerusakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, kerusakan $kerusakan)
     {
-        //
+        $nama = $request->nama;
+
+        $kerusakan = new kerusakan(); //manggil model kecamatan
+        $kerusakan->nama = $nama;
+        $kerusakan->id_kejadian_bencana = $request->id_kejadian_bencana;
+        $kerusakan->id_dampak_bencana = $request->id_dampak_bencana;
+        $kerusakan->save();
+
+        return redirect()
+            ->to('/dashboard/kerusakan')
+            ->withSuccess('Berhasil menambah data');
     }
 
     /**
@@ -95,8 +107,13 @@ class KerusakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(kerusakan $kerusakan)
     {
-        //
+        $kerusakan->delete();
+
+            return redirect()
+                ->to('/dashboard/kerusakan')
+                ->withSuccess('Berhasil menghapus data');
+
     }
 }

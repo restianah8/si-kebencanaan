@@ -24,6 +24,7 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
+                              
                               <form action="/dashboard/dampak_bencana/edit/{{ $dampak_bencana->id }}" method="post" novalidate="novalidate">
                                 @csrf
                                 @method('PUT')

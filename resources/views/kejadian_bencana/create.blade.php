@@ -24,12 +24,12 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="/dashboard/dampak_bencana/tambah" method="post" novalidate="novalidate">
+                              <form action="/dashboard/kejadian_bencana/tambah" method="post" novalidate="novalidate">
                                 @csrf
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                    <label for="kab">jenis_bencana:</label>
-                                    <select name="id_jenis_bencana" id="kab" class="form-control">
+                                    <label for="jenis_bencana">jenis_bencana:</label>
+                                    <select name="id_jenis_bencana" id="jenis_bencana" class="form-control">
                                         @foreach ($jenis_bencana as $item)
                                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                         @endforeach
@@ -38,8 +38,8 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <label for="kab">kabupaten:</label>
-                                        <select name="id_kabupaten" id="kab" class="form-control">
+                                        <label for="kabupaten">kabupaten:</label>
+                                        <select name="id_kabupaten" id="kabupaten" class="form-control">
                                             @foreach ($kabupaten as $item)
                                                 <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                             @endforeach
@@ -48,8 +48,8 @@
                                  </div>
                                 <div class="col-md-7">
                                      <div class="form-group">
-                                         <label for="id">Kecamatan:</label>
-                                        <select name="id_kecamatan" id="id" class="form-control">
+                                         <label for="kecamatan">Kecamatan:</label>
+                                        <select name="id_kecamatan" id="kecamatan" class="form-control">
                                             @foreach ($kecamatan as $item)
                                                 <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                              @endforeach
@@ -58,8 +58,8 @@
                                         </div>
                                 <div class="col-md-7">
                                      <div class="form-group">
-                                         <label for="kab">kelurahana:</label>
-                                        <select name="id_kelurahan" id="kab" class="form-control">
+                                         <label for="kelurahan">kelurahana:</label>
+                                        <select name="id_kelurahan" id="kelurahan" class="form-control">
                                              @foreach ($kelurahan as $item)
                                                  <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                              @endforeach
@@ -68,41 +68,53 @@
                                  </div>
                                 <div class="col-md-7">
                                   <div class="form-group">
-                                    <label for="nama">tanggal:</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                    <label for="tanggal">tanggal:</label>
+                                    <input type="date" name="tanggal" id="tanggal" class="form-control" required="required">
                                   </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <label for="nama">waktu:</label>
-                                        <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                        <label for="waktu">waktu:</label>
+                                        <input type="time" name="waktu" id="waktu" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                      <div class="form-group">
-                                        <label for="nama">lokasi:</label>
-                                        <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                        <label for="lokasi">lokasi:</label>
+                                        <input type="text" name="lokasi" id="lokasi" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                         <label for="nama">akibat:</label>
-                                        <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                         <label for="akibat">akibat:</label>
+                                        <input type="text" name="akibat" id="akibat" class="form-control" required="required">
                                     </div>
                                 </div>
 
                                 <div class="col-md-7">
                                      <div class="form-group">
-                                        <label for="nama">penyebab:</label>
-                                         <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                        <label for="penyebab">penyebab:</label>
+                                         <input type="text" name="penyebab" id="penyebab" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                      <div class="form-group">
-                                        <label for="nama">kronologis:</label>
-                                        <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                        <label for="kronologis">kronologis:</label>
+                                        <input type="text" name="kronologis" id="kronologis" class="form-control" required="required">
                                     </div>
                                 </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                       <label for="keterangan">keterangan:</label>
+                                       <input type="text" name="keterangan" id="keterangan" class="form-control" required="required">
+                                   </div>
+                               </div>
+                               <div class="col-md-7">
+                                <div class="form-group">
+                                   <label for="taksir_kerugian">taksir_kerugian:</label>
+                                   <input type="text" name="taksir_kerugian" id="taksir_kerugian" class="form-control" required="required">
+                               </div>
+                           </div>
                                 <div class="col-md-1">
                                 <div class="form-group text-right">
                                     <input type="submit" value="Tambah Data" class="btn btn-warning">

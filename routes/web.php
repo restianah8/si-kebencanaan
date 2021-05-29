@@ -10,6 +10,7 @@ use App\Http\Controllers\Jenis_bencanaController;
 use App\Http\Controllers\Jenis_kerusakanController;
 use App\Http\Controllers\Kejadian_bencanaController;
 use App\Http\Controllers\KerusakanController;
+use App\Models\Kejadian_bencana;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +74,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'edit']);
     Route::put('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'update']);
     Route::get('/kejadian_bencana/hapus/{kejadian_bencana}', [Kejadian_bencanaController::class, 'destroy']);
-
+    
     //star dampak bencana
     Route::get('/dampak_bencana',[Dampak_bencanaController::class, 'index']);
     Route::get('/dampak_bencana/tambah', [Dampak_bencanaController::class, 'create']);
@@ -88,6 +89,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
     //
     Route::get('/kerusakan',[KerusakanController::class, 'index']);
+    Route::get('/kerusakan/tambah', [KerusakanController::class, 'create']);
+    Route::post('/kerusakan/tambah', [KerusakanController::class, 'store']);
+    Route::get('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'edit']);
+    Route::put('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'update']);
+    Route::get('/kerusakan/hapus/{kerusakan}', [KerusakanController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

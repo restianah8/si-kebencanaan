@@ -24,14 +24,14 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="/dashboard/kelurahan/tambah" method="post" novalidate="novalidate">
+                              <form action="/dashboard/kerusakan/tambah" method="post" novalidate="novalidate">
                                 @csrf
 
                                 <div class="form-group">
                                     <label for="id">kejadian_bencana:</label>
                                     <select name="id_kejadian_bencana" id="id" class="form-control">
                                         @foreach ($kejadian_bencana as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->id }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -44,16 +44,16 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">RB:</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                    <label for="RB">RB:</label>
+                                    <input type="text" name="RB" id="RB" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">RS:</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                    <label for="RS">RS:</label>
+                                    <input type="text" name="RS" id="RS" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">RR:</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" required="required">
+                                    <label for="RR">RR:</label>
+                                    <input type="text" name="RR" id="RR" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group text-right">

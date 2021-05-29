@@ -46,16 +46,25 @@ class Kejadian_bencanaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
 
         $kejadian_bencana = new Kejadian_bencana(); //manggil model kecamatan
         $kejadian_bencana->id_jenis_bencana = $request->id_jenis_bencana;
         $kejadian_bencana->id_kabupaten = $request->id_kabupaten;
         $kejadian_bencana->id_kecamatan = $request->id_kecamatan;
         $kejadian_bencana->id_kelurahan = $request->id_kelurahan;
+        $kejadian_bencana->tanggal = $request->input('tanggal');
+        $kejadian_bencana->waktu = $request->input('waktu');
+        $kejadian_bencana->lokasi = $request->input('lokasi');
+        $kejadian_bencana->akibat = $request->input('akibat');
+        $kejadian_bencana->penyebab= $request->input('penyebab');
+        $kejadian_bencana->kronologis = $request->input('kronologis');
+        $kejadian_bencana->keterangan= $request->input('keterangan');
+        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
         $kejadian_bencana->save();
 
         return redirect()
-            ->to('/dashboard/kejadian_encana')
+            ->to('/dashboard/kejadian_bencana')
             ->withSuccess('Berhasil menambah data');
     }
 
@@ -76,9 +85,14 @@ class Kejadian_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kejadian_bencana $kejadian_bencana)
     {
-        //
+        $jenis_bencana = Jenis_bencana::all();
+        $kabupaten = Kabupaten::all();
+        $kecamatan = Kecamatan::all();
+        $kelurahan = Kelurahan::all();
+
+        return view('kejadian_bencana.edit', compact('jenis_bencana','kabupaten','kecamatan','kelurahan','kejadian_bencana'));
     }
 
     /**
@@ -88,9 +102,26 @@ class Kejadian_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kejadian_bencana $kejadian_bencana)
     {
-        //
+        $kejadian_bencana = new Kejadian_bencana(); //manggil model kecamatan
+        $kejadian_bencana->id_jenis_bencana = $request->id_jenis_bencana;
+        $kejadian_bencana->id_kabupaten = $request->id_kabupaten;
+        $kejadian_bencana->id_kecamatan = $request->id_kecamatan;
+        $kejadian_bencana->id_kelurahan = $request->id_kelurahan;
+        $kejadian_bencana->tanggal = $request->input('tanggal');
+        $kejadian_bencana->waktu = $request->input('waktu');
+        $kejadian_bencana->lokasi = $request->input('lokasi');
+        $kejadian_bencana->akibat = $request->input('akibat');
+        $kejadian_bencana->penyebab= $request->input('penyebab');
+        $kejadian_bencana->kronologis = $request->input('kronologis');
+        $kejadian_bencana->keterangan= $request->input('keterangan');
+        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
+        $kejadian_bencana->save();
+
+        return redirect()
+            ->to('/dashboard/kejadian_bencana')
+            ->withSuccess('Berhasil mengubah data');
     }
 
     /**
@@ -99,8 +130,12 @@ class Kejadian_bencanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kejadian_bencana $kejadian_bencana)
     {
-        //
+        $kejadian_bencana->delete();
+
+        return redirect()
+            ->to('/dashboard/kejadian_bencana')
+            ->withSuccess('Berhasil menghapus data');
     }
 }
