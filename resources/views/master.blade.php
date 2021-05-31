@@ -5,8 +5,7 @@
     <title>halaman utama</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="ALCHEMIST Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
     <script type="application/x-javascript">
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
@@ -157,21 +156,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="design">
         <div class="container">
             <div class="design-main">
-                <div class="col-md-3 design-left">
-                    <div class="design-text">
-                        <img src="menu/images/design-1.png" alt="" />
-                        <h3>Cuaca</h3>
-                        <p>Informasi perkiraan Cuaca,</p>
-                    </div>
+                <div class="col-md-4 design-left">
+                    <a target="_blank" href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg?Prov=05&NamaProv=Bengkulu">
+                        <div class="design-text">
+                            <img src="menu/images/design-1.png" alt="" />
+                            <h3>Cuaca</h3>
+                            <p>Informasi perkiraan Cuaca,</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-3 design-left">
-                    <div class="design-text">
-                        <img src="menu/images/design-2.png" alt="" />
-                        <h3>Gempa</h3>
-                        <p>Informasi Perkiraan Gempa,</p>
-                    </div>
-                </div>
-                <div class="col-md-3 design-left">
+
+                <div class="col-md-4 design-left">
                     <a href="{{ route('lapor_bencana.lapor') }}">
                         <div class="design-text">
                             <img src="menu/images/design-3.png" alt="" />
@@ -180,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 design-left">
+                <div class="col-md-4 design-left">
                     <div class="design-text">
                         <img src="menu/images/design-4.png" alt="" />
                         <h3>Peringat Dini</h3>
