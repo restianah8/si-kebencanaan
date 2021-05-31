@@ -150,11 +150,11 @@
         <div class="container">
 
             @if (session()->has('success'))
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-success">{{ session()->get('success') }}</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success">{{ session()->get('success') }}</div>
+                    </div>
                 </div>
-            </div>
             @endif
             <form action="{{ route('lapor_bencana.simpan') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -318,7 +318,7 @@
         <div class="container">
             <div class="footer-text">
                 <p>Template By<a href="http://w3layouts.com/"> W3layouts</a></p>
-                <a href="#home" class="scroll"><img src="images/top-img.png" alt=""></a>
+                <a href="#home" class="scroll"><img src="{{ asset('menu/images/top-img.png') }}" alt=""></a>
             </div>
         </div>
     </div>
