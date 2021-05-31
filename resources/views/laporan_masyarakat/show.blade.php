@@ -57,10 +57,39 @@
                                     <td>Foto</td>
                                     <td>
                                         @isset($laporan_bencana->media[0])
-                                        <img src="{{ $laporan_bencana->media[0]->getFullUrl() }}" class="img-fluid">
+                                            <img src="{{ $laporan_bencana->media[0]->getFullUrl() }}" class="img-fluid">
                                         @else
-                                        Tidak ada foto
+                                            Tidak ada foto
                                         @endisset
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="mapouter">
+                                            <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+                                                    src="https://maps.google.com/maps?q={{ $laporan_bencana->lokasi_kejadian }}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                                    frameborder="0" scrolling="no" marginheight="0"
+                                                    marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br>
+                                                <style>
+                                                    .mapouter {
+                                                        position: relative;
+                                                        text-align: right;
+                                                        height: 500px;
+                                                        width: 600px;
+                                                    }
+
+                                                </style><a href="https://www.embedgooglemap.net">google maps html</a>
+                                                <style>
+                                                    .gmap_canvas {
+                                                        overflow: hidden;
+                                                        background: none !important;
+                                                        height: 500px;
+                                                        width: 600px;
+                                                    }
+
+                                                </style>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
