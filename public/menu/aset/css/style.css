@@ -11,7 +11,7 @@ p {margin: 0;}
 html, body{
    font-family: 'Lato', sans-serif;
    font-size: 100%;
-   background:#fff; 
+   background:#fff;
 }
 body a{
 	transition:0.5s all;
@@ -128,7 +128,7 @@ nav a#pull {
 }
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
-	nav { 
+	nav {
   		height: auto;
   		float:none;
   	}
@@ -165,7 +165,7 @@ nav a#pull {
 	  	text-align: left;
 	  	width: 100%;
   	}
-  	
+
 }
 /*Styles for screen 515px and lower*/
 @media only screen and (max-width : 768px) {
@@ -225,23 +225,23 @@ nav a#pull {
 /*--end-header--*/
 /*--starts-banner--*/
 .banner-1{
-	background:url(../images/banner-1.jpg) no-repeat;
+	background:url(../../images/banner-1.jpg) no-repeat;
 	background-size:100% 100%;
 	min-height: 600px;
 }
 .banner-2{
-	background:url(../images/banner-2.jpg) no-repeat;
+	background:url(../../images/banner-2.jpg) no-repeat;
 	background-size:100% 100%;
 	min-height: 600px;
 }
 .banner-3{
-	background:url(../images/banner-3.jpg) no-repeat;
+	background:url(../../images/banner-3.jpg) no-repeat;
 	background-size:100% 100%;
 	min-height: 600px;
 }
 /*------------------ Slider Part starts Here----------*/
 .slider{
-	background:url(../images/slide-banner.jpg)no-repeat;
+	background:url(../../images/slide-banner.jpg)no-repeat;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
@@ -347,7 +347,7 @@ nav a#pull {
 	text-decoration: none;
 	height: 16px;
 	width: 16px;
-	background: transparent url("../images/arrows.png") no-repeat left top;
+	background: transparent url("../../images/arrows.png") no-repeat left top;
 }
 .callbacks_nav:active {
   opacity: 1.0;
@@ -635,7 +635,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 }
 .project-name span{
 	position: absolute;
-	background:url(../images/zoom-1.png) no-repeat;
+	background:url(../../images/zoom-1.png) no-repeat;
 	width:30px;
 	height:30px;
 	display:block;
@@ -759,7 +759,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 	color: #000;
 	font-size: 15px;
 	font-weight: 400;
-	background: url(../images/heart.png) no-repeat 0px 0px #ebb30a;
+	background: url(../../images/heart.png) no-repeat 0px 0px #ebb30a;
 }
 .news-btn {
 	bottom: 0;
@@ -768,7 +768,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 }
 .news-btn a:hover{
 	color: #fff;
-	background: url(../images/heart.png) no-repeat 0px 0px #ebb30a;
+	background: url(../../images/heart.png) no-repeat 0px 0px #ebb30a;
 	text-decoration:none;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -777,7 +777,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 	-ms-transition: 0.5s all;
 }
 .planning{
-	background:url(../images/news-5.png) no-repeat;
+	background:url(../../images/news-5.png) no-repeat;
 	width:1168px;
 	height:136px;
 	display:block;
@@ -818,7 +818,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 	display:inline-block;
 }
 .touch-right ul li span{
-	background:url(../images/social-icons.png) no-repeat;
+	background:url(../../images/social-icons.png) no-repeat;
 	width:64px;
 	height:64px;
 	display:block;
@@ -969,7 +969,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 /*--start-about--*/
 .about {
 	padding: 4em 0px 2em 0px;
-}	
+}
 .about-main h3,.team-main h3,.contact-top h3,.get-main h3{
 	font-size: 2em;
 	color: #595959;
@@ -1223,7 +1223,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 	margin-top: 1.5em;
 }
 .get-btm-top ul li{
-	list-style-image: url(../images/correct.png);
+	list-style-image: url(../../images/correct.png);
 	margin: 0px 0px 19px 18px;
 }
 .get-btm-top ul li a{
@@ -1263,7 +1263,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 /*--end-get--*/
 /*--starts-media-quaries--*/
 @media (max-width:1440px){
-	
+
 }
 @media (max-width:1366px){
 .team {
@@ -1277,7 +1277,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 }
 .planning {
 	width: 1139px;
-	height: 132px;	
+	height: 132px;
 	background-size: 100%;
 }
 }
@@ -1307,7 +1307,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 }
 .clients-top h3 {
 	font-size: 2.85em;
-}	
+}
 }
 @media (max-width:1024px){
 .about-main h3, .team-main h3, .contact-top h3 {
@@ -1345,7 +1345,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 }
 .top-nav ul li a {
 	font-size: 16px;
-	padding: 0px 16px 0px 16px;	
+	padding: 0px 16px 0px 16px;
 }
 nav {
 	width: 52%;
@@ -1703,7 +1703,7 @@ nav a {
 }
 .banner-1, .banner-2, .banner-3 {
 	min-height: 350px;
-}	
+}
 .build-left {
 	width: 70%;
 	float: left;
@@ -1931,7 +1931,7 @@ nav a#pull img {
 }
 .logo {
 	width: 26%;
-}	
+}
 .logo a img {
 	margin-top: 3px;
 }
@@ -2375,7 +2375,7 @@ nav a#pull img {
 @media (max-width:320px){
 .footer-text img {
 	width: 11%;
-}	
+}
 .footer-text p {
 	font-size: 13px;
 	margin-bottom: 7px;

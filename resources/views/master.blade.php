@@ -18,13 +18,13 @@
     </script>
     <link rel="stylesheet" href="{{ asset('menu/aset/css/bootstrap.css') }}" type='text/css' />
     <link rel="stylesheet" href="{{ asset('menu/aset/css/style.css') }}" type='text/css' />
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="{{ asset('menu/aset/js/jquery-1.11.0.min.js') }}"></script>
     <link
         href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
         rel='stylesheet' type='text/css'>
     <!--Start-smoth-scrolling-->
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="{{ asset('menu/aset/js/move-top.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('menu/aset/js/easing.js') }}"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -66,7 +66,7 @@
     </script>
     <!--End-top-nav-script-->
     <!--light-box-files -->
-    <script src="js/jquery.chocolat.js"></script>
+    <script src="{{ asset('menu/aset/js/jquery.chocolat.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('menu/aset/css/chocolat.css') }}" type="text/css" media="screen"
         charset="utf-8" />
     <!--light-box-files -->
@@ -113,7 +113,7 @@
     </div>
     <!--End-banner-->
     <!--Slider-Starts-Here-->
-    <script src="js/responsiveslides.min.js"></script>
+    <script src="{{ asset('menu/aset/js/responsiveslides.min.js') }}"></script>
     <script>
         // You can also use "$(window).load(function() {"
         $(function() {
@@ -199,7 +199,7 @@
                         <li>
                             <div class="work-bottom">
                                 <div class="col-md-6 work-left">
-                                    <img src="images/work-1.jpg" alt="">
+                                    <img src="{{ asset('menu/images/work-1.jpg') }}" alt="">
                                 </div>
                                 <div class="col-md-6 work-right">
                                     <div class="work-mian">
@@ -221,13 +221,13 @@
                             </div>
                             <div class="pop-up">
                                 <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span> </span><img
-                                        src="images/pop-up.png" alt="" /></a>
+                                        src="{{ asset('menu/images/pop-up.png') }}" alt="" /></a>
                             </div>
                         </li>
                         <li>
                             <div class="work-bottom">
                                 <div class="col-md-6 work-left">
-                                    <img src="menu/images/work-2.jpg" alt="">
+                                    <img src="{{ asset('menu/images/work-2.jpg') }}" alt="">
                                 </div>
                                 <div class="col-md-6 work-right">
                                     <div class="work-mian">
@@ -249,13 +249,13 @@
                             </div>
                             <div class="pop-up">
                                 <a class="play-icon popup-with-zoom-anim" href="#small-dialog1"><span> </span><img
-                                        src="images/pop-up.png" alt="" /></a>
+                                        src="{{ asset('menu/images/pop-up.png') }}" alt="" /></a>
                             </div>
                         </li>
                         <li>
                             <div class="work-bottom">
                                 <div class="col-md-6 work-left">
-                                    <img src="menu/images/work-3.jpg" alt="">
+                                    <img src="{{ asset('menu/images/work-3.jpg') }}" alt="">
                                 </div>
                                 <div class="col-md-6 work-right">
                                     <div class="work-mian">
@@ -277,7 +277,7 @@
                             </div>
                             <div class="pop-up">
                                 <a class="play-icon popup-with-zoom-anim" href="#small-dialog2"><span> </span><img
-                                        src="images/pop-up.png" alt="" /></a>
+                                        src="{{ asset('menu/images/pop-up.png') }}" alt="" /></a>
                             </div>
                         </li>
                     </ul>
@@ -311,9 +311,9 @@
     </script>
     <!--End-slider-script-->
     <!---pop-up-box---->
-    <script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="{{ asset('menu/aset/js/modernizr.custom.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('menu/aset/css/popup-box.css') }}" type="text/css" media="all" />
-    <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <script src="{{ asset('menu/aset/js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
     <!---//pop-up-box---->
     <div id="small-dialog" class="mfp-hide">
         <div class="login">
@@ -350,7 +350,7 @@
     <!--start-footer-->
     <!-- requried-jsfiles-for owl -->
     <link rel="stylesheet" href="{{ asset('menu/aset/css/owl.carousel.css') }}">
-    <script src="js/owl.carousel.js"></script>
+    <script src="{{ asset('menu/aset/js/owl.carousel.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#owl-demo").owlCarousel({
@@ -501,7 +501,7 @@
     </div>
     <!--end-clients-->
     <!--Slider-Starts-Here-->
-    <script src="js/responsiveslides.min.js"></script>
+    <script src="{{ asset('menu/aset/js/responsiveslides.min.js') }}"></script>
     <script>
         // You can also use "$(window).load(function() {"
         $(function() {
@@ -533,7 +533,7 @@
             </div>
             <div class="news-bottom">
                 <div class="col-md-4 news-left">
-                    <img src="images/news-1.jpg" alt="" />
+                    <img src="{{ asset('menu/images/news-1.jpg') }}" alt="" />
                     <div class="news-main">
                         <h4>Upadate news title</h4>
                         <ul>
@@ -550,7 +550,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 news-left">
-                    <img src="images/news-2.jpg" alt="" />
+                    <img src="{{ asset('menu/images/news-2.jpg') }}" alt="" />
                     <div class="news-main">
                         <h4>Upadate news title</h4>
                         <ul>
@@ -567,7 +567,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 news-left">
-                    <img src="images/news-3.jpg" alt="" />
+                    <img src="{{ asset('menu/images/news-3.jpg') }}" alt="" />
                     <div class="news-main">
                         <h4>Upadate news title</h4>
                         <ul>
@@ -629,7 +629,7 @@
         <div class="container">
             <div class="footer-text">
                 <p>Template By<a href="http://w3layouts.com/"> W3layouts</a></p>
-                <a href="#home" class="scroll"><img src="images/top-img.png" alt=""></a>
+                <a href="#home" class="scroll"><img src="{{ asset('menu/images/top-img.png') }}" alt=""></a>
             </div>
         </div>
     </div>
