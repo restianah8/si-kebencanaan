@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('title')
-    Tambah Data Kelurahan
+    Tambah Data Kerusakan
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Tambah Data kelurahan</h1>
+                <h1>Tambah Data kerusakan</h1>
             </div>
         </div>
     </div>

@@ -31,10 +31,18 @@
                 <div class="card-body">
           <table id="bootstrap-data-table" class="table table-striped table-bordered">
             <thead>
-              <tr>
-                <th>id</th>
-                <th>id_kejadian bencana</th>
-                <th>Nama </th>
+                <tr>
+                    <th>id</th>
+                    <th>id_kejadian bencana</th>
+                    <th>nama kerusakan</th>
+                    <th>luas</th>
+                    <th>jumlah</th>
+                    <th>tafsir kerugian</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                 @foreach ($kerusakan_lainnya as $item)
+                 <tbody>
             <tr>
            <td>{{ ($loop->index + 1) }}</td>
            <td>{{$item->kejadian_bencana->id}}</td>

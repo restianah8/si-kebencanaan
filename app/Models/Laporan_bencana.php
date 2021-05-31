@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Laporan_bencana extends Model implements HasMedia
 {
-    use InteractsWithMedia, HasFactory;
+    use HasFactory, HasMediaTrait;
 }

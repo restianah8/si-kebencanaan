@@ -40,7 +40,7 @@ class LaporanBencanaController extends Controller
             'nama' => 'required|min:4|max:128',
             'email' => 'nullable|email|min:12|max:255',
             'no_hp' => 'required|min:9|max:24',
-            'subjek' => 'required|min:10|max:1024',
+            'subjek' => 'required|min:5|max:1024',
             'lokasi' => 'required|min:4|max:1024',
             'kronologi' => 'required|min:16|max:5096',
             'foto' => 'nullable|mimes:jpg,jpeg,png,bmp'
