@@ -43,8 +43,8 @@
                                 <th>Lokasi</th>
                                 <th>akibat</th>
                                 <th>penyebab</th>
+                                <th>kronologis</th>
                                 <th>keterangan</th>
-                                <th>Tksir Kerugian</th>
                                 <th>Aksi</th>
                               </tr>
                             </thead>
@@ -63,8 +63,8 @@
                                 <td>{{ $item->lokasi }}</td>
                                 <td>{{ $item->akibat }}</td>
                                 <td>{{ $item->penyebab }}</td>
+                                <td>{{ $item->kronologis }}</td>
                                 <td>{{ $item->keterangan }}</td>
-                                <td>{{ $item->taksir_kerugian }}</td>
 
                                 <td>
                                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>

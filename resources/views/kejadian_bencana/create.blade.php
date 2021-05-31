@@ -109,11 +109,7 @@
                                        <input type="text" name="keterangan" id="keterangan" class="form-control" required="required">
                                    </div>
                                </div>
-                               <div class="col-md-7">
-                                <div class="form-group">
-                                   <label for="taksir_kerugian">taksir_kerugian:</label>
-                                   <input type="text" name="taksir_kerugian" id="taksir_kerugian" class="form-control" required="required">
-                               </div>
+                            
                            </div>
                                 <div class="col-md-1">
                                 <div class="form-group text-right">

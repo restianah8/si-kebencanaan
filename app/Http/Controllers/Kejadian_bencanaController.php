@@ -60,7 +60,6 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->penyebab= $request->input('penyebab');
         $kejadian_bencana->kronologis = $request->input('kronologis');
         $kejadian_bencana->keterangan= $request->input('keterangan');
-        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
         $kejadian_bencana->save();
 
         return redirect()
@@ -104,7 +103,6 @@ class Kejadian_bencanaController extends Controller
      */
     public function update(Request $request, Kejadian_bencana $kejadian_bencana)
     {
-        $kejadian_bencana = new Kejadian_bencana(); //manggil model kecamatan
         $kejadian_bencana->id_jenis_bencana = $request->id_jenis_bencana;
         $kejadian_bencana->id_kabupaten = $request->id_kabupaten;
         $kejadian_bencana->id_kecamatan = $request->id_kecamatan;
@@ -116,7 +114,6 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->penyebab= $request->input('penyebab');
         $kejadian_bencana->kronologis = $request->input('kronologis');
         $kejadian_bencana->keterangan= $request->input('keterangan');
-        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
         $kejadian_bencana->save();
 
         return redirect()

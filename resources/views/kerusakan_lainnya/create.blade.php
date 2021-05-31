@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('title')
-    Tambah Data Kelurahan
+    Tambah Data kerusakan lainnya
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Tambah Data kelurahan</h1>
+                <h1>Tambah Data kerusakan lainnya</h1>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="/dashboard/kerusakan/tambah" method="post" novalidate="novalidate">
+                              <form action="/dashboard/kerusakan_lainnya/tambah" method="post" novalidate="novalidate">
                                 @csrf
 
                                 <div class="form-group">
@@ -35,25 +35,22 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="dampak_bencana">dampak_bencana:</label>
-                                    <select name="id_dampak_bencana" id="dampak_bencana" class="form-control">
-                                        @foreach ($dampak_bencana as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="nama_kerusakan">nama_kerusakan:</label>
+                                    <input type="text" name="nama_kerusakan" id="nama_kerusakan" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <label for="RB">RB:</label>
-                                    <input type="text" name="RB" id="RB" class="form-control" required="required">
+                                    <label for="luas_kerusakan">luas_kerusakan:</label>
+                                    <input type="text" name="luas_kerusakan" id="luas_kerusakan" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <label for="RS">RS:</label>
-                                    <input type="text" name="RS" id="RS" class="form-control" required="required">
+                                    <label for="jumlah_kerusakan">jumlah_kerusakan:</label>
+                                    <input type="text" name="jumlah_kerusakan" id="jumlah_kerusakan" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <label for="RR">RR:</label>
-                                    <input type="text" name="RR" id="RR" class="form-control" required="required">
+                                    <label for="tafsir_kerugian">tafsir_kerugian:</label>
+                                    <input type="text" name="tafsir_kerugian" id="tafsir_kerugian" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group text-right">

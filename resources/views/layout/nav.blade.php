@@ -27,19 +27,12 @@
                                 <li><i class="fa fa-table"></i><a href="/dashboard/kejadian_bencana">Kejadian Bencana</a></li>
                                 <li><i class="fa fa-table"></i><a href="/dashboard/dampak_bencana">Dampak Bencana</a></li>
                                 <li><i class="fa fa-table"></i><a href="/dashboard/kerusakan">Kerusakan</a></li>
-                                <li><i class="fa fa-table"></i><a href="/dashboard/jenis_kerusakan">Jenis Kerusakan lainnya</a></li>
+                                <li><i class="fa fa-table"></i><a href="/dashboard/kerusakan_lainnya">Kerusakan lainnya</a></li>
+                                <li><i class="fa fa-table"></i><a href="/dashboard/korban_bencana">Korban bencana</a></li>
                          </ul>
                     </li>
                     <li>
-  
-                    <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="menu-icon fa fa-table"></i>Korban Bencana</a>
-                         <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-table"></i><a href="/dashboard/data_Korban_Bencana">Master Korban Jiwa</a></li>
-                                <li><i class="fa fa-table"></i><a href="tables-basic.html">Master Korban Menderita</a></li>
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="/dashboard/peta_rawan_bencana"> <i class="menu-icon fa fa-users"></i>Peta Rawan Bencana </a>
                     </li>

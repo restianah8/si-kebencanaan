@@ -5,16 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kerusakan_lainnya extends Model
+class korban_bencana extends Model
 {
     use HasFactory;
-    public $table = 'kerusakan_lainnya';
+    use HasFactory;
+    public $table = 'korban_bencana';
     protected $fillable = [
-        'id_kejadian_bencana','nama_kerusakan','luas_kerusakan','jumlah_kerusakan','tafsir_kerugian'
+        'id_kejadian_bencana','id_dampak_bencana','laki_laki','perempuan','jumlah'
     ];
     public $timestamps = false;
 
     public function kejadian_bencana() {
         return $this->HasOne(Kejadian_bencana::class, 'id', 'id_kejadian_bencana');
     }
+    public function dampak_bencana() {
+        return $this->HasOne(Dampak_bencana::class, 'id', 'id_dampak_bencana');
+}
 }

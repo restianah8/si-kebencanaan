@@ -1,6 +1,6 @@
 @extends('layout.template')
 @section('title')
-    Data kerusakan
+    Data korban bencana
 @endsection
 
 @section('content')
@@ -8,13 +8,13 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Data  kerusakan</h1>
+                <h1>Data korban bencana</h1>
             </div>
         </div>
     </div>
     <div class="col-sm-12">
         <div class=" float-right mt-2">
-        <a href="/dashboard/kerusakan/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+        <a href="/dashboard/korban_bencana/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
     </div>
 </div>
 
@@ -34,26 +34,26 @@
                 <th>id</th>
                 <th>id_kejadian bencana</th>
                 <th>id_dampak bencana</th>
-                <th>RB</th>
-                <th>RS</th>
-                <th>RR</th>
+                <th>laki-laki</th>
+                <th>perempuan</th>
+                <th>jumlah</th>
                 <th>Aksi</th>
               </tr>
             </thead>
-             @foreach ($kerusakan as $item)
+             @foreach ($korban_bencana as $item)
              <tbody>
 
              <tr>
             <td>{{ ($loop->index + 1) }}</td>
             <td>{{$item->kejadian_bencana->id}}</td>
             <td>{{$item->dampak_bencana->nama}}</td>
-            <td>{{$item->RB}}</td>
-            <td>{{$item->RS}}</td>
-            <td>{{$item->RR}}</td>
+            <td>{{$item->laki_laki}}</td>
+            <td>{{$item->perempuan}}</td>
+            <td>{{$item->jumlah}}</td>
                 <td>
                     <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
-                    <a href="/dashboard/kerusakan/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="/dashboard/kerusakan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="/dashboard/korban_bencana/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="/dashboard/korban_bencana/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 

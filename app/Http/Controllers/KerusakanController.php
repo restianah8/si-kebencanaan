@@ -42,7 +42,7 @@ class KerusakanController extends Controller
      */
     public function store(Request $request, kerusakan $kerusakan)
     {
-        $nama = $request->nama;
+
 
         $kerusakan = new kerusakan(); //manggil model kecamatan
         $kerusakan->id_kejadian_bencana = $request->id_kejadian_bencana;
@@ -74,9 +74,12 @@ class KerusakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kerusakan $kerusakan)
     {
-        //
+        $kejadian_bencana = Kejadian_bencana::all();
+        $dampak_bencana = Dampak_bencana::all();
+
+        return view('kerusakan.edit', compact('kejadian_bencana','dampak_bencana','kerusakan'));
     }
 
     /**
@@ -88,12 +91,11 @@ class KerusakanController extends Controller
      */
     public function update(Request $request, kerusakan $kerusakan)
     {
-        $nama = $request->nama;
-
-        $kerusakan = new kerusakan(); //manggil model kecamatan
-        $kerusakan->nama = $nama;
         $kerusakan->id_kejadian_bencana = $request->id_kejadian_bencana;
         $kerusakan->id_dampak_bencana = $request->id_dampak_bencana;
+        $kerusakan->RB = $request->input('RB');
+        $kerusakan->RS= $request->input('RS');
+        $kerusakan->RR = $request->input('RR');
         $kerusakan->save();
 
         return redirect()
@@ -104,7 +106,7 @@ class KerusakanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kerusakan  $kerusakan
      * @return \Illuminate\Http\Response
      */
     public function destroy(kerusakan $kerusakan)

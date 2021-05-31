@@ -7,10 +7,10 @@ use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\Jenis_bencanaController;
-use App\Http\Controllers\Jenis_kerusakanController;
 use App\Http\Controllers\Kejadian_bencanaController;
 use App\Http\Controllers\KerusakanController;
-use App\Models\Kejadian_bencana;
+use App\Http\Controllers\Kerusakan_lainnyaController;
+use App\Http\Controllers\Korban_bencanaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,7 +74,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'edit']);
     Route::put('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'update']);
     Route::get('/kejadian_bencana/hapus/{kejadian_bencana}', [Kejadian_bencanaController::class, 'destroy']);
-    
+
     //star dampak bencana
     Route::get('/dampak_bencana',[Dampak_bencanaController::class, 'index']);
     Route::get('/dampak_bencana/tambah', [Dampak_bencanaController::class, 'create']);
@@ -84,16 +84,31 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/dampak_bencana/hapus/{dampak_bencana}', [Dampak_bencanaController::class, 'destroy']);
 
 
-    //jenis kerusakn
-    Route::get('/jenis_kerusakan',[Jenis_kerusakanController::class, 'index']);
 
-    //
+    //kerusakan
     Route::get('/kerusakan',[KerusakanController::class, 'index']);
     Route::get('/kerusakan/tambah', [KerusakanController::class, 'create']);
     Route::post('/kerusakan/tambah', [KerusakanController::class, 'store']);
     Route::get('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'edit']);
     Route::put('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'update']);
     Route::get('/kerusakan/hapus/{kerusakan}', [KerusakanController::class, 'destroy']);
+
+    //kerusakan_lainnya
+    Route::get('/kerusakan_lainnya',[Kerusakan_lainnyaController::class, 'index']);
+    Route::get('/kerusakan_lainnya/tambah', [Kerusakan_lainnyaController::class, 'create']);
+    Route::post('/kerusakan_lainnya/tambah', [Kerusakan_lainnyaController::class, 'store']);
+    Route::get('/kerusakan_lainnya/edit/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'edit']);
+    Route::put('/kerusakan_lainnya/edit/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'update']);
+    Route::get('/kerusakan_lainnya/hapus/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'destroy']);
+
+    //korban bencana
+    Route::get('/korban_bencana',[Korban_bencanaController::class, 'index']);
+    Route::get('/korban_bencana/tambah', [Korban_bencanaController::class, 'create']);
+    Route::post('/korban_bencana/tambah', [Korban_bencanaController::class, 'store']);
+    Route::get('/korban_bencana/edit/{korban_bencana}', [Korban_bencanaController::class, 'edit']);
+    Route::put('/korban_bencana/edit/{korban_bencana}', [Korban_bencanaController::class, 'update']);
+    Route::get('/korban_bencana/hapus/{korban_bencana}', [Korban_bencanaController::class, 'destroy']);
+
 });
 
 require __DIR__ . '/auth.php';

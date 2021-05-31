@@ -27,7 +27,6 @@ class CreateKejadianBencanasTable extends Migration
             $table->string('penyebab', 60);
             $table->string('kronologis', 200);
             $table->text('keterangan',200);
-            $table->string('taksir_kerugian', 10,2);
 
             $table->timestamps();
 
