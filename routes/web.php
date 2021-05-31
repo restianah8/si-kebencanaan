@@ -11,6 +11,8 @@ use App\Http\Controllers\Kejadian_bencanaController;
 use App\Http\Controllers\KerusakanController;
 use App\Http\Controllers\Kerusakan_lainnyaController;
 use App\Http\Controllers\Korban_bencanaController;
+use App\Http\Controllers\LaporanMasyarakatController;
+use App\Http\Controllers\Publik\LaporanBencanaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +111,13 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::put('/korban_bencana/edit/{korban_bencana}', [Korban_bencanaController::class, 'update']);
     Route::get('/korban_bencana/hapus/{korban_bencana}', [Korban_bencanaController::class, 'destroy']);
 
+    //Laporan masyarakat
+    Route::get('/laporan-masyarakat', [LaporanMasyarakatController::class, 'index'])->name('laporan_masyarakat.index');
+    Route::get('/laporan-masyarakat/{laporan_bencana}', [LaporanMasyarakatController::class, 'show'])->name('laporan_masyarakat.show');
+
 });
+
+Route::get('/lapor-bencana', [LaporanBencanaController::class, 'create'])->name('lapor_bencana.lapor');
+Route::post('/lapor-bencana', [LaporanBencanaController::class, 'store'])->name('lapor_bencana.simpan');
 
 require __DIR__ . '/auth.php';

@@ -49,6 +49,9 @@
                     <li>
                         <a href="/dashboard/laporan"> <i class="menu-icon fa fa-file"></i>Laporan </a>
                     </li>
+                    <li>
+                        <a href="{{ route('laporan_masyarakat.index') }}"> <i class="menu-icon fa fa-info"></i>Laporan Masyarakat</a>
+                    </li>
                     <li><br><br><br>
                         <div class="col-sm-8">
                             <div class="user-area dropdown float-right">
