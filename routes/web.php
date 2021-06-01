@@ -114,8 +114,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     //Laporan masyarakat
     Route::get('/laporan-masyarakat', [LaporanMasyarakatController::class, 'index'])->name('laporan_masyarakat.index');
     Route::get('/laporan-masyarakat/{laporan_bencana}', [LaporanMasyarakatController::class, 'show'])->name('laporan_masyarakat.show');
-
-});
+    Route::get('/laporan-masyarakat/hapus/{laporan_bencana}', [LaporanMasyarakatController::class, 'destroy'])->name('laporan_masyarakat.destroy');;
+  });
 
 Route::get('/lapor-bencana', [LaporanBencanaController::class, 'create'])->name('lapor_bencana.lapor');
 Route::post('/lapor-bencana', [LaporanBencanaController::class, 'store'])->name('lapor_bencana.simpan');

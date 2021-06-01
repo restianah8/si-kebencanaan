@@ -42,7 +42,7 @@
                     <td>{{ ($loop->index + 1) }}</td>
                   <td>{{$item->nama}}</td>
                 <td>
-                    <a href="" class=" mb-2 fa fa-eye bg-primary p-2 text-white rounded"></a>
+                   
                     <a href="/dashboard/jenis_bencana/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
                     <a href="/dashboard/jenis_bencana/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>

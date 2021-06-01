@@ -284,8 +284,8 @@
     <div class="touch">
         <div class="container">
             <div class="touch-main">
-                <div class="col-md-4 touch-left">
-                    <h3>Get in touch</h3>
+                <div class="col-md-5 touch-left">
+                    <h3>ALAMAT BPBD  BENGKULU</h3>
                     <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
                     <p>Call: 123 456 789
                     <p>
@@ -293,10 +293,14 @@
                         <span><a href="mailto:example@email.com">testmail@sitename.com</a></span>
                     </p>
                 </div>
-                <div class="col-md-4 touch-left">
-                    <h3>@twitter</h3>
-                    <p>@twitterCheck out this great #codecanyon item 'Responsive Login, Sign Up and Payment Form Wizard'
-                        codecanyon.net/item/responsiv…</p>
+                <div class="col-md-5 touch-left">
+                    <h3>POSDALOP</h3>
+                    <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
+                    <p>Call: 123 456 789
+                    <p>
+                    <p>E-mail:<a href="mailto:example@email.com">testmail@sitename.com</a>
+                        <span><a href="mailto:example@email.com">testmail@sitename.com</a></span>
+                    </p>
                     <label>about 2days ago</label>
                 </div>
                 <div class="col-md-4 touch-right">
@@ -312,17 +316,7 @@
             </div>
         </div>
     </div>
-    <!--end-touch-->
-    <!--start-footer-->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-text">
-                <p>Template By<a href="http://w3layouts.com/"> W3layouts</a></p>
-                <a href="#home" class="scroll"><img src="{{ asset('menu/images/top-img.png') }}" alt=""></a>
-            </div>
-        </div>
-    </div>
-    <!--End-footer-->
+
 </body>
 
 </html>

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Laporan_bencana;
 use Illuminate\Http\Request;
 
-class LaporanMasyarakatController extends Controller
+class BeritaBencanaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class LaporanMasyarakatController extends Controller
      */
     public function index()
     {
-        $laporan = Laporan_bencana::paginate();
-
-        return view('laporan_masyarakat.index', compact('laporan'));
+        //
     }
 
     /**
@@ -43,21 +40,21 @@ class LaporanMasyarakatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Laporan_bencana  $laporan_bencana
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Laporan_bencana $laporan_bencana)
+    public function show($id)
     {
-        return view('laporan_masyarakat.show', compact('laporan_bencana'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Laporan_bencana  $laporan_bencana
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Laporan_bencana $laporan_bencana)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +63,10 @@ class LaporanMasyarakatController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Laporan_bencana  $laporan_bencana
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Laporan_bencana $laporan_bencana)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,15 +74,11 @@ class LaporanMasyarakatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Laporan_bencana  $laporan_bencana
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Laporan_bencana $laporan_bencana)
+    public function destroy($id)
     {
-        $laporan_bencana->delete();
-
-        return redirect()
-            ->to('/dashboard/laporan_bencana')
-            ->withSuccess('Berhasil menghapus data');
+        //
     }
 }

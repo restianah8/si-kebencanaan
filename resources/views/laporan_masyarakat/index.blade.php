@@ -21,16 +21,16 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Tabel kerusakan lainnya</strong>
+                            <strong class="card-title">Tabel laporan masyrakat</strong>
                         </div>
                         <div class="card-body">
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <tr class="thead-dark">
-                                    <th scope="col">#</th>
+                                    <th scope="col">no</th>
                                     <th scope="col">Subjek</th>
                                     <th scope="col">Lokasi</th>
                                     <th scope="col">Pelapor</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Aksi</th>
                                 <tr>
                                 <tbody>
                                     @foreach ($laporan as $item)
@@ -43,6 +43,8 @@
                                                 <a href="{{ route('laporan_masyarakat.show', $item->id) }}" class="btn btn-sm btn-info">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
+                                                <a href="{{ route('laporan_masyarakat.destroy', $item->id) }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+
                                             </td>
                                         </tr>
                                     @endforeach

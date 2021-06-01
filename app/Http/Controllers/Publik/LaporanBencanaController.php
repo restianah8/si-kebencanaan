@@ -107,6 +107,10 @@ class LaporanBencanaController extends Controller
      */
     public function destroy(Laporan_bencana $laporan_bencana)
     {
-        //
+        $laporan_bencana->delete();
+
+        return redirect()
+            ->to('/dashboard/laporan_bencana')
+            ->withSuccess('Berhasil menghapus data');
     }
 }
