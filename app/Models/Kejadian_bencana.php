@@ -10,7 +10,7 @@ class Kejadian_bencana extends Model
     use HasFactory;
     public $table = 'kejadian_bencana';
     protected $fillable = [
-        'id_jenis_bencana','id_kabupaten','id_kecamatan','id_kelurahan','tanggal','waktu','lokasi','akibat','penyebab','kronologis','keterangan'
+        'id_jenis_bencana','id_kabupaten','id_kecamatan','id_kelurahan','tanggal','waktu','lokasi','jumlah','meninggal_hilang','luka_luka','mengungsi_terdampak','rumah_RB','rumah_RR','rumah_RS','rumah_terendam','fasilitas_pendidikan','fasilitas_peribadatan','fasilitas_perkantoran','fasilitas_kesehatan','jembatan','hutan','lahan','sawah','kebun','luas_kerusakan','keterangan','taksir_kerugian'
     ];
     public $timestamps = false;
 

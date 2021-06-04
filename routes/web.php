@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\Dampak_bencanaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -12,7 +13,11 @@ use App\Http\Controllers\KerusakanController;
 use App\Http\Controllers\Kerusakan_lainnyaController;
 use App\Http\Controllers\Korban_bencanaController;
 use App\Http\Controllers\LaporanMasyarakatController;
+use App\Http\Controllers\PeringatanController;
+use App\Http\Controllers\PeringatandiniController;
+use App\Http\Controllers\Publik\InfoBencanaController;
 use App\Http\Controllers\Publik\LaporanBencanaController;
+use App\Http\Controllers\Publik\PeringatanDiniController as PublikPeringatanDiniController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,47 +82,30 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::put('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'update']);
     Route::get('/kejadian_bencana/hapus/{kejadian_bencana}', [Kejadian_bencanaController::class, 'destroy']);
 
-    //star dampak bencana
-    Route::get('/dampak_bencana',[Dampak_bencanaController::class, 'index']);
-    Route::get('/dampak_bencana/tambah', [Dampak_bencanaController::class, 'create']);
-    Route::post('/dampak_bencana/tambah', [Dampak_bencanaController::class, 'store']);
-    Route::get('/dampak_bencana/edit/{dampak_bencana}', [Dampak_bencanaController::class, 'edit']);
-    Route::put('/dampak_bencana/edit/{dampak_bencana}', [Dampak_bencanaController::class, 'update']);
-    Route::get('/dampak_bencana/hapus/{dampak_bencana}', [Dampak_bencanaController::class, 'destroy']);
 
 
-
-    //kerusakan
-    Route::get('/kerusakan',[KerusakanController::class, 'index']);
-    Route::get('/kerusakan/tambah', [KerusakanController::class, 'create']);
-    Route::post('/kerusakan/tambah', [KerusakanController::class, 'store']);
-    Route::get('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'edit']);
-    Route::put('/kerusakan/edit/{kerusakan}', [KerusakanController::class, 'update']);
-    Route::get('/kerusakan/hapus/{kerusakan}', [KerusakanController::class, 'destroy']);
-
-    //kerusakan_lainnya
-    Route::get('/kerusakan_lainnya',[Kerusakan_lainnyaController::class, 'index']);
-    Route::get('/kerusakan_lainnya/tambah', [Kerusakan_lainnyaController::class, 'create']);
-    Route::post('/kerusakan_lainnya/tambah', [Kerusakan_lainnyaController::class, 'store']);
-    Route::get('/kerusakan_lainnya/edit/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'edit']);
-    Route::put('/kerusakan_lainnya/edit/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'update']);
-    Route::get('/kerusakan_lainnya/hapus/{kerusakan_lainnya}', [Kerusakan_lainnyaController::class, 'destroy']);
-
-    //korban bencana
-    Route::get('/korban_bencana',[Korban_bencanaController::class, 'index']);
-    Route::get('/korban_bencana/tambah', [Korban_bencanaController::class, 'create']);
-    Route::post('/korban_bencana/tambah', [Korban_bencanaController::class, 'store']);
-    Route::get('/korban_bencana/edit/{korban_bencana}', [Korban_bencanaController::class, 'edit']);
-    Route::put('/korban_bencana/edit/{korban_bencana}', [Korban_bencanaController::class, 'update']);
-    Route::get('/korban_bencana/hapus/{korban_bencana}', [Korban_bencanaController::class, 'destroy']);
 
     //Laporan masyarakat
     Route::get('/laporan-masyarakat', [LaporanMasyarakatController::class, 'index'])->name('laporan_masyarakat.index');
     Route::get('/laporan-masyarakat/{laporan_bencana}', [LaporanMasyarakatController::class, 'show'])->name('laporan_masyarakat.show');
     Route::get('/laporan-masyarakat/hapus/{laporan_bencana}', [LaporanMasyarakatController::class, 'destroy'])->name('laporan_masyarakat.destroy');;
-  });
+
+
+     //peringatan
+     Route::get('/peringatan', [PeringatanController::class, 'index'])->name('peringatan.index');
+     Route::get('/peringatan/tambah', [PeringatanController::class, 'create'])->name('peringatan.tambah');
+     Route::post('/peringatan/tambah', [PeringatanController::class, 'store'])->name('peringatan.simpan');
+
+     //berita
+     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
+     Route::get('/berita/tambah', [BeritaController::class, 'create'])->name('berita.tambah');
+     Route::post('/berita/tambah', [BeritaController::class, 'store'])->name('berita.simpan');
+});
 
 Route::get('/lapor-bencana', [LaporanBencanaController::class, 'create'])->name('lapor_bencana.lapor');
 Route::post('/lapor-bencana', [LaporanBencanaController::class, 'store'])->name('lapor_bencana.simpan');
+
+Route::get('/info_bencana', [InfoBencanaController::class, 'index'])->name('lapor_bencana.index');
+Route::get('/peringatan-bencana', [PublikPeringatanDiniController::class, 'index'])->name('peringatan_dini');
 
 require __DIR__ . '/auth.php';

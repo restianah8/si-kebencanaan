@@ -184,11 +184,13 @@
                     </a>
                 </div>
                 <div class="col-md-4 design-left">
-                    <div class="design-text">
-                        <img src="menu/images/design-4.png" alt="" />
-                        <h3>Peringat Dini</h3>
-                        <p>Informasi Peringatan Dini Bencana,</p>
-                    </div>
+                    <a href="{{ route('peringatan_dini') }}">
+                        <div class="design-text">
+                            <img src="menu/images/design-4.png" alt="" />
+                            <h3>Peringat Dini</h3>
+                            <p>Informasi Peringatan Dini Bencana,</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -293,11 +295,11 @@
             <div class="touch-main">
                 <div class="col-md-5 touch-left">
                     <h3>ALAMAT BPBD  BENGKULU</h3>
-                    <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
-                    <p>Call: 123 456 789
+                    <p>JL.P.NATADIRJA KM.7</p>
+                    <p>TELP/FAX(0736)349674
                     <p>
-                    <p>E-mail:<a href="mailto:example@email.com">testmail@sitename.com</a>
-                        <span><a href="mailto:example@email.com">testmail@sitename.com</a></span>
+                    <p>E-mail:<a href="BPBD@gmail.com">BPBD@gmail.com</a>
+
                     </p>
                 </div>
                 <div class="col-md-5 touch-left">
@@ -305,10 +307,8 @@
                     <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
                     <p>Call: 123 456 789
                     <p>
-                    <p>E-mail:<a href="mailto:example@email.com">testmail@sitename.com</a>
-                        <span><a href="mailto:example@email.com">testmail@sitename.com</a></span>
+                        <p>E-mail:<a href="BPBD@gmail.com">BPBD@gmail.com</a>
                     </p>
-                    <label>about 2days ago</label>
                 </div>
                 <div class="col-md-4 touch-right">
                     <ul>

@@ -45,38 +45,7 @@
     </style>
 
     <!--end-smoth-scrolling-->
-    <!--start-top-nav-script-->
-    <script>
-        $(function() {
-            var pull = $('#pull');
-            menu = $('nav ul');
-            menuHeight = menu.height();
-            $(pull).on('click', function(e) {
-                e.preventDefault();
-                menu.slideToggle();
-            });
-            $(window).resize(function() {
-                var w = $(window).width();
-                if (w > 320 && menu.is(':hidden')) {
-                    menu.removeAttr('style');
-                }
-            });
-        });
 
-    </script>
-    <!--End-top-nav-script-->
-    <!--light-box-files -->
-    <script src="js/jquery.chocolat.js"></script>
-    <link rel="stylesheet" href="{{ asset('menu/aset/css/chocolat.css') }}" type="text/css" media="screen"
-        charset="utf-8" />
-    <!--light-box-files -->
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            $('#example1 a').Chocolat();
-        });
-
-    </script>
-</head>
 
 <body>
     <!--start-top-nav-->
@@ -108,40 +77,6 @@
         </div>
     </div>
     <!--End-build-->
-    <!---pop-up-box---->
-    <script type="text/javascript" src="js/modernizr.custom.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('menu/aset/css/popup-box.css') }}" type="text/css" media="all" />
-    <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function() {
-            $('.popup-with-zoom-anim').magnificPopup({
-                type: 'inline',
-                fixedContentPos: false,
-                fixedBgPos: true,
-                overflowY: 'auto',
-                closeBtnInside: true,
-                preloader: false,
-                midClick: true,
-                removalDelay: 300,
-                mainClass: 'my-mfp-zoom-in'
-            });
-
-        });
-
-    </script>
-    <!--start-footer-->
-    <!-- requried-jsfiles-for owl -->
-    <link rel="stylesheet" href="{{ asset('menu/aset/css/owl.carousel.css') }}">
-    <script src="js/owl.carousel.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#owl-demo").owlCarousel({
-                items: 5,
-                lazyLoad: true,
-                autoPlay: true,
-                pagination: false,
-            });
-        });
 
     </script>
     <!-- //requried-jsfiles-for owl -->
@@ -256,27 +191,7 @@
         </div>
     </div>
     <!--end-clients-->
-    <!--Slider-Starts-Here-->
-    <script src="js/responsiveslides.min.js"></script>
-    <script>
-        // You can also use "$(window).load(function() {"
-        $(function() {
-            // Slideshow 4
-            $("#slider6").responsiveSlides({
-                auto: true,
-                pager: false,
-                nav: false,
-                speed: 500,
-                namespace: "callbacks",
-                before: function() {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function() {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
 
-        });
 
     </script>
     <!--End-slider-script-->
