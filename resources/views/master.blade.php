@@ -25,7 +25,7 @@
     <!--Start-smoth-scrolling-->
     <script type="text/javascript" src="{{ asset('menu/aset/js/move-top.js') }}"></script>
     <script type="text/javascript" src="{{ asset('menu/aset/js/easing.js') }}"></script>
-    <script type="text/javascript" >
+    <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
                 event.preventDefault();
@@ -80,25 +80,25 @@
 
 <body>
     <!--start-header-->
-	<div class="header" id="home">
-		<div class="container">
-			<div class="logo ">
-				<a href="#"><img src="menu/images/bpbd.png"  alt="" style="width:120px; "/></a>
-			</div>
+    <div class="header" id="home">
+        <div class="container">
+            <div class="logo ">
+                <a href="#"><img src="menu/images/bpbd.png" alt="" style="width:120px; " /></a>
+            </div>
 
-    </div>
+        </div>
 
-    <!--start-top-nav-->
-    <nav class="top-nav">
-        <ul class="top-nav">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="{{route ('info_bencana')}}">Info kejadian Bencana</a></li>
-            <li><a href="contact.html">Peta Rawan Bencana</a></li>
-            <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
-        </ul>
-        <a href="#" id="pull"><img src="menu/images/menu-icon.png" title="menu" /></a>
-    </nav>
-    <div class="clearfix"> </div>
+        <!--start-top-nav-->
+        <nav class="top-nav">
+            <ul class="top-nav">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="{{ route('info_bencana') }}">Info kejadian Bencana</a></li>
+                <li><a href="contact.html">Peta Rawan Bencana</a></li>
+                <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
+            </ul>
+            <a href="#" id="pull"><img src="menu/images/menu-icon.png" title="menu" /></a>
+        </nav>
+        <div class="clearfix"> </div>
     </div>
     </div>
     <!--end-header-->
@@ -167,7 +167,8 @@
         <div class="container">
             <div class="design-main">
                 <div class="col-md-4 design-left">
-                    <a target="_blank" href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg?Prov=05&NamaProv=Bengkulu">
+                    <a target="_blank"
+                        href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg?Prov=05&NamaProv=Bengkulu">
                         <div class="design-text">
                             <img src="menu/images/design-1.png" alt="" />
                             <h3>Cuaca</h3>
@@ -232,36 +233,48 @@
 
     <div class="news">
         <div class="container">
-            <div class="news-top">
-                <h3>Berita Terbaru</h3>
-                <p>Berita terbaru Badan Penangulangan Bencana Daerah Provensi Bengkulu</p>
-            </div>
-            <div class="news-bottom">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="news-top">
+                        <h3>Berita Terbaru</h3>
+                        <p>Berita terbaru Badan Penangulangan Bencana Daerah Provensi Bengkulu</p>
+                    </div>
+                    <div class="news-bottom">
 
-                @foreach ($berita as $item)
-                <div class="col-md-4 news-left">
-                    @if (isset($item->media[0]))
-                    <img src="{{ $item->media[0]->getFullUrl() }}" alt=""
-                        style="width:320px; height:216px"/>
-                    @else
-                    <img src="{{ asset('menu/images/banjir1.jpg') }}" alt=""
-                        style="width:320px; height:216px"/>
-                    @endif
+                        @foreach ($berita as $item)
+                            <div class="col-md-4 news-left">
+                                @if (isset($item->media[0]))
+                                    <img src="{{ $item->media[0]->getFullUrl() }}" alt=""
+                                        style="width:320px; height:216px" />
+                                @else
+                                    <img src="{{ asset('menu/images/banjir1.jpg') }}" alt=""
+                                        style="width:320px; height:216px" />
+                                @endif
 
-                    <div class="news-main">
-                        <h4><a href="{{ route('berita.read', $item->id) }}">{{ $item->judul }}</a></h4>
-                        <ul>
-                            <li><span>{{ date('l, d F Y H:i', strtotime($item->created_at)) }}</span></li>
-                        </ul>
-                        <p>{{ \Str::limit($item->isi, 200) }}</p>
-                        <div class="news-btn">
-                            <a href="{{ route('berita.read', $item->id) }}">Read More</a>
-                        </div>
+                                <div class="news-main">
+                                    <h4><a href="{{ route('berita.read', $item->id) }}">{{ $item->judul }}</a>
+                                    </h4>
+                                    <ul>
+                                        <li><span>{{ date('l, d F Y H:i', strtotime($item->created_at)) }}</span>
+                                        </li>
+                                    </ul>
+                                    <p>{{ \Str::limit($item->isi, 200) }}</p>
+                                    <div class="news-btn">
+                                        <a href="{{ route('berita.read', $item->id) }}">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-                @endforeach
-
-                <div class="clearfix"></div>
+                <div class="col-md-4">
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/n3d79102d26/bengkulu/" data-label_1="BENGKULU" data-label_2="WEATHER" data-theme="original" >BENGKULU WEATHER</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
             </div>
             <div class="planning">
                 <p>BADAN PENANGGULANGAN BENCANA DAERAH PROVENSI BENGKULU</p>
@@ -274,7 +287,7 @@
         <div class="container">
             <div class="touch-main">
                 <div class="col-md-5 touch-left">
-                    <h3>ALAMAT BPBD  BENGKULU</h3>
+                    <h3>ALAMAT BPBD BENGKULU</h3>
                     <p>JL.P.NATADIRJA KM.7</p>
                     <p>TELP/FAX(0736)349674
                     <p>
@@ -287,7 +300,7 @@
                     <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
                     <p>Call: 123 456 789
                     <p>
-                        <p>E-mail:<a href="BPBD@gmail.com">BPBD@gmail.com</a>
+                    <p>E-mail:<a href="BPBD@gmail.com">BPBD@gmail.com</a>
                     </p>
                 </div>
                 <div class="col-md-4 touch-right">
@@ -308,7 +321,3 @@
 </body>
 
 </html>
-
-
-
-

@@ -18,9 +18,9 @@ class Kejadian_bencanaController extends Controller
      */
     public function index()
     {
-        $kejadian_bencana = Kejadian_bencana::with('jenis_bencana','kabupaten','kecamatan','kelurahan')->get();
+        $kejadian_bencana = Kejadian_bencana::with('jenis_bencana', 'kabupaten', 'kecamatan', 'kelurahan')->orderBy('created_at', 'DESC')->get();
 
-        return view('kejadian_bencana.index',compact('kejadian_bencana'));
+        return view('kejadian_bencana.index', compact('kejadian_bencana'));
     }
 
     /**
@@ -35,7 +35,7 @@ class Kejadian_bencanaController extends Controller
         $kecamatan = Kecamatan::all();
         $kelurahan = Kelurahan::all();
 
-        return view('kejadian_bencana.create', compact('jenis_bencana','kabupaten','kecamatan','kelurahan'));
+        return view('kejadian_bencana.create', compact('jenis_bencana', 'kabupaten', 'kecamatan', 'kelurahan'));
     }
 
     /**
@@ -57,25 +57,27 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->waktu = $request->input('waktu');
         $kejadian_bencana->lokasi = $request->input('lokasi');
         $kejadian_bencana->jumlah = $request->input('jumlah');
-        $kejadian_bencana->meninggal_hilang= $request->input('meninggal_hilang');
+        $kejadian_bencana->meninggal_hilang = $request->input('meninggal_hilang');
         $kejadian_bencana->luka_luka = $request->input('luka_luka');
-        $kejadian_bencana->mengungsi_terdampak= $request->input('mengungsi_terdampak');
-        $kejadian_bencana->rumah_RB= $request->input('rumah_RB');
-        $kejadian_bencana->rumah_RR= $request->input('rumah_RR');
-        $kejadian_bencana->rumah_RS= $request->input('rumah_RS');
-        $kejadian_bencana->rumah_terendam= $request->input('rumah_terendam');
-        $kejadian_bencana->fasilitas_pendidikan= $request->input('fasilitas_pendidikan');
-        $kejadian_bencana->fasilitas_peribadatan= $request->input('fasilitas_peribadatan');
-        $kejadian_bencana->fasilitas_perkantoran= $request->input('fasilitas_perkantoran');
-        $kejadian_bencana->fasilitas_kesehatan= $request->input('fasilitas_kesehatan');
-        $kejadian_bencana->jembatan= $request->input('jembatan');
-        $kejadian_bencana->hutan= $request->input('hutan');
-        $kejadian_bencana->lahan= $request->input('lahan');
-        $kejadian_bencana->sawah= $request->input('sawah');
-        $kejadian_bencana->kebun= $request->input('kebun');
-        $kejadian_bencana->luas_kerusakan= $request->input('luas_kerusakan');
-        $kejadian_bencana->keterangan= $request->input('keterangan');
-        $kejadian_bencana->taksir_kerugian= $request->input('taksir_kerugian');
+        $kejadian_bencana->mengungsi_terdampak = $request->input('mengungsi_terdampak');
+        $kejadian_bencana->rumah_RB = $request->input('rumah_RB');
+        $kejadian_bencana->rumah_RR = $request->input('rumah_RR');
+        $kejadian_bencana->rumah_RS = $request->input('rumah_RS');
+        $kejadian_bencana->rumah_terendam = $request->input('rumah_terendam');
+        $kejadian_bencana->fasilitas_pendidikan = $request->input('fasilitas_pendidikan');
+        $kejadian_bencana->fasilitas_peribadatan = $request->input('fasilitas_peribadatan');
+        $kejadian_bencana->fasilitas_perkantoran = $request->input('fasilitas_perkantoran');
+        $kejadian_bencana->fasilitas_kesehatan = $request->input('fasilitas_kesehatan');
+        $kejadian_bencana->jembatan = $request->input('jembatan');
+        $kejadian_bencana->hutan = $request->input('hutan');
+        $kejadian_bencana->lahan = $request->input('lahan');
+        $kejadian_bencana->sawah = $request->input('sawah');
+        $kejadian_bencana->kebun = $request->input('kebun');
+        $kejadian_bencana->luas_kerusakan = $request->input('luas_kerusakan');
+        $kejadian_bencana->keterangan = $request->input('keterangan');
+        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
+
+        $kejadian_bencana->created_at = date('Y-m-d H:i:s');
 
         $kejadian_bencana->save();
 
@@ -87,7 +89,7 @@ class Kejadian_bencanaController extends Controller
     /**
      * Display the specified resource.
      *
-    *  @param  \App\Models\Kejadian_bencana  $kejadian_bencana
+     *  @param  \App\Models\Kejadian_bencana  $kejadian_bencana
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -108,7 +110,7 @@ class Kejadian_bencanaController extends Controller
         $kecamatan = Kecamatan::all();
         $kelurahan = Kelurahan::all();
 
-        return view('kejadian_bencana.edit', compact('jenis_bencana','kabupaten','kecamatan','kelurahan','kejadian_bencana'));
+        return view('kejadian_bencana.edit', compact('jenis_bencana', 'kabupaten', 'kecamatan', 'kelurahan', 'kejadian_bencana'));
     }
 
     /**
@@ -129,25 +131,25 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->waktu = $request->input('waktu');
         $kejadian_bencana->lokasi = $request->input('lokasi');
         $kejadian_bencana->jumlah = $request->input('jumlah');
-        $kejadian_bencana->meninggal_hilang= $request->input('meninggal_hilang');
+        $kejadian_bencana->meninggal_hilang = $request->input('meninggal_hilang');
         $kejadian_bencana->luka_luka = $request->input('luka_luka');
-        $kejadian_bencana->mengungsi_terdampak= $request->input('mengungsi_terdampak');
-        $kejadian_bencana->rumah_RB= $request->input('rumah_RB');
-        $kejadian_bencana->rumah_RR= $request->input('rumah_RR');
-        $kejadian_bencana->rumah_RS= $request->input('rumah_RS');
-        $kejadian_bencana->rumah_terendam= $request->input('rumah_terendam');
-        $kejadian_bencana->fasilitas_pendidikan= $request->input('fasilitas_pendidikan');
-        $kejadian_bencana->fasilitas_peribadatan= $request->input('fasilitas_peribadatan');
-        $kejadian_bencana->fasilitas_perkantoran= $request->input('fasilitas_perkantoran');
-        $kejadian_bencana->fasilitas_kesehatan= $request->input('fasilitas_kesehatan');
-        $kejadian_bencana->jembatan= $request->input('jembatan');
-        $kejadian_bencana->hutan= $request->input('hutan');
-        $kejadian_bencana->lahan= $request->input('lahan');
-        $kejadian_bencana->sawah= $request->input('sawah');
-        $kejadian_bencana->kebun= $request->input('kebun');
-        $kejadian_bencana->luas_kerusakan= $request->input('luas_kerusakan');
-        $kejadian_bencana->keterangan= $request->input('keterangan');
-        $kejadian_bencana->taksir_kerugian= $request->input('taksir_kerugian');
+        $kejadian_bencana->mengungsi_terdampak = $request->input('mengungsi_terdampak');
+        $kejadian_bencana->rumah_RB = $request->input('rumah_RB');
+        $kejadian_bencana->rumah_RR = $request->input('rumah_RR');
+        $kejadian_bencana->rumah_RS = $request->input('rumah_RS');
+        $kejadian_bencana->rumah_terendam = $request->input('rumah_terendam');
+        $kejadian_bencana->fasilitas_pendidikan = $request->input('fasilitas_pendidikan');
+        $kejadian_bencana->fasilitas_peribadatan = $request->input('fasilitas_peribadatan');
+        $kejadian_bencana->fasilitas_perkantoran = $request->input('fasilitas_perkantoran');
+        $kejadian_bencana->fasilitas_kesehatan = $request->input('fasilitas_kesehatan');
+        $kejadian_bencana->jembatan = $request->input('jembatan');
+        $kejadian_bencana->hutan = $request->input('hutan');
+        $kejadian_bencana->lahan = $request->input('lahan');
+        $kejadian_bencana->sawah = $request->input('sawah');
+        $kejadian_bencana->kebun = $request->input('kebun');
+        $kejadian_bencana->luas_kerusakan = $request->input('luas_kerusakan');
+        $kejadian_bencana->keterangan = $request->input('keterangan');
+        $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
 
         $kejadian_bencana->save();
 

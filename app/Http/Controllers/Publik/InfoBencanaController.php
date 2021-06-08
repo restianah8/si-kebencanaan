@@ -10,7 +10,7 @@ class InfoBencanaController extends Controller
 {
     public function index()
     {
-        $kejadian_bencana = Kejadian_bencana::all();
+        $kejadian_bencana = Kejadian_bencana::orderBy('created_at', 'DESC')->limit(3)->get();
 
         return view('publik.info_bencana.index', compact('kejadian_bencana'));
     }
