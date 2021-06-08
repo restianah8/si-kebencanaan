@@ -12,6 +12,6 @@ class HomeController extends Controller
     {
         $berita = Berita::orderBy('created_at', 'DESC')->get();
 
-        return view('master', compact('berita'));
+        return view('public.home', compact('berita'));
     }
 }

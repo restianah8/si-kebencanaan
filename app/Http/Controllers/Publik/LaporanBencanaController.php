@@ -25,7 +25,7 @@ class LaporanBencanaController extends Controller
      */
     public function create()
     {
-        return view('publik.lapor_bencana.create');
+        return view('public.laporan_bencana.create');
     }
 
     /**

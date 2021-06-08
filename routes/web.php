@@ -27,7 +27,7 @@ use App\Http\Controllers\Publik\PeringatanDiniController as PublikPeringatanDini
 |
 */
 
-Route::get('/', [PublikHomeController::class, 'index']);
+Route::get('/', [PublikHomeController::class, 'index'])->name('home');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
