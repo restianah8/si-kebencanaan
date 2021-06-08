@@ -91,8 +91,8 @@
     <!--start-top-nav-->
     <nav class="top-nav">
         <ul class="top-nav">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">Info Bencana</a></li>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="{{route ('info_bencana')}}">Info kejadian Bencana</a></li>
             <li><a href="contact.html">Peta Rawan Bencana</a></li>
             <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
         </ul>
@@ -161,6 +161,8 @@
     </div>
     <!--End-build-->
     <!--start-design-->
+
+
     <div class="design">
         <div class="container">
             <div class="design-main">
@@ -183,6 +185,7 @@
                         </div>
                     </a>
                 </div>
+
                 <div class="col-md-4 design-left">
                     <a href="{{ route('peringatan_dini') }}">
                         <div class="design-text">
@@ -226,6 +229,7 @@
     <!---//pop-up-box---->
 
     <!--start-news-->
+
     <div class="news">
         <div class="container">
             <div class="news-top">
@@ -233,54 +237,30 @@
                 <p>Berita terbaru Badan Penangulangan Bencana Daerah Provensi Bengkulu</p>
             </div>
             <div class="news-bottom">
+
+                @foreach ($berita as $item)
                 <div class="col-md-4 news-left">
-                    <img src="{{ asset('menu/images/banjir1.jpg') }}" alt="" style="width:320px; height:216px"/>
+                    @if (isset($item->media[0]))
+                    <img src="{{ $item->media[0]->getFullUrl() }}" alt=""
+                        style="width:320px; height:216px"/>
+                    @else
+                    <img src="{{ asset('menu/images/banjir1.jpg') }}" alt=""
+                        style="width:320px; height:216px"/>
+                    @endif
+
                     <div class="news-main">
-                        <h4>Banjir</h4>
+                        <h4><a href="{{ route('berita.read', $item->id) }}">{{ $item->judul }}</a></h4>
                         <ul>
-                            <li><span>01/01/2014</span></li>
-                            <li><span>5 Comment</span></li>
+                            <li><span>{{ date('l, d F Y H:i', strtotime($item->created_at)) }}</span></li>
                         </ul>
-                        <p>Vivamus viverra nibh in quam bibendum interdum. Duis convallis est ante, id pulvinar tortor
-                            tempus sed. Pellentesque nulla tellus,id pulvinar tortor tempus sed. Pellentesque nulla
-                            tellus,</p>
+                        <p>{{ \Str::limit($item->isi, 200) }}</p>
                         <div class="news-btn">
-                            <a href="#">Read More</a>
+                            <a href="{{ route('berita.read', $item->id) }}">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 news-left">
-                    <img src="{{ asset('menu/images/be.jpg') }}" alt="" style="width:320px; height:216px"/>
-                    <div class="news-main">
-                        <h4>Tanah Longsor</h4>
-                        <ul>
-                            <li><span>01/01/2014</span></li>
-                            <li><span>5 Comment</span></li>
-                        </ul>
-                        <p>Vivamus viverra nibh in quam bibendum interdum. Duis convallis est ante, id pulvinar tortor
-                            tempus sed. Pellentesque nulla tellus,id pulvinar tortor tempus sed. Pellentesque nulla
-                            tellus,</p>
-                        <div class="news-btn">
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 news-left">
-                    <img src="{{ asset('menu/images/gunung3.jpg') }}" alt="" style="width:320px; height:216px" />
-                    <div class="news-main">
-                        <h4>Eropsi gunung</h4>
-                        <ul>
-                            <li><span>01/01/2014</span></li>
-                            <li><span>5 Comment</span></li>
-                        </ul>
-                        <p>Vivamus viverra nibh in quam bibendum interdum. Duis convallis est ante, id pulvinar tortor
-                            tempus sed. Pellentesque nulla tellus,id pulvinar tortor tempus sed. Pellentesque nulla
-                            tellus,</p>
-                        <div class="news-btn">
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
                 <div class="clearfix"></div>
             </div>
             <div class="planning">

@@ -24,7 +24,7 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="{{ route('berita.tambah') }}" method="post" novalidate="novalidate">
+                              <form action="{{ route('berita.tambah') }}" method="post" enctype="multipart/form-data" novalidate="novalidate">
                                 @csrf
 
                                 <div class="form-group">
@@ -33,8 +33,13 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="foto">Foto</label>
+                                    <input type="file" name="foto" id="foto" class="form-control" required="required">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="isi">isi:</label>
-                                    <input type="text" name="isi" id="isi" class="form-control" required="required">
+                                    <textarea name="isi" id="isi" class="form-control" required="required"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">

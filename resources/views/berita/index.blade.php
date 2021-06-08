@@ -39,8 +39,9 @@
                 <th>Aksi</th>
               </tr>
             </thead>
-            @foreach ($berita as $item)
             <tbody>
+            @foreach ($berita as $item)
+
 
               <tr>
                 <td>{{ ($loop->index + 1) }}</td>
@@ -48,13 +49,14 @@
                 <td>{{$item->isi}}</td>
                 <td>
 
-                    <a href="/dashboard/berita/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
-                    <a href="/dashboard/berita/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                    <a href="{{ route('berita.edit', $item->id )}}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
+                    <a href="{{ route('berita.hapus', $item->id )}}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 
-            </tbody>
+
             @endforeach
+        </tbody>
           </table>
                 </div>
             </div>

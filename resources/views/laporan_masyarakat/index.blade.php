@@ -43,7 +43,7 @@
                                                 <a href="{{ route('laporan_masyarakat.show', $item->id) }}" class="btn btn-sm btn-info">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
-                                                <a href="{{ route('laporan_masyarakat.destroy', $item->id) }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
+                                                <a href="{{ route('laporan_masyarakat.hapus', $item->id) }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
 
                                             </td>
                                         </tr>

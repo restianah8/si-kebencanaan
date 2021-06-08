@@ -65,9 +65,8 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                     @foreach ($kejadian_bencana as $item)
-
-                                        <tbody>
 
                                             <tr>
                                                 <td>{{ $loop->index + 1 }}</td>
@@ -108,9 +107,8 @@
                                                         class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                                                 </td>
                                             </tr>
-
-                                        </tbody>
                                     @endforeach
+                                </tbody>
 
                                 </table>
                             </div>

@@ -41,6 +41,11 @@ class BeritaController extends Controller
         $berita->isi = $request->input('isi');
         $berita->save();
 
+        if ($request->has('foto') && $request->file('foto')->isValid()) {
+            $berita->addMediaFromRequest('foto')
+                ->toMediaCollection('berita_images');
+        }
+
         return redirect()
             ->to('/dashboard/berita')
             ->withSuccess('Berhasil menambah data');

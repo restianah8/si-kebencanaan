@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Peringatan Dini Bencana</title>
+    <title>Info kejadian bencana</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -18,6 +18,20 @@
     </script>
     <link rel="stylesheet" href="{{ asset('menu/aset/css/bootstrap.css') }}" type='text/css' />
     <link rel="stylesheet" href="{{ asset('menu/aset/css/style.css') }}" type='text/css' />
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="{{asset('template/assets/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/flag-icon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/cs-skin-elastic.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/scss/style.css')}}">
+    <link rel="stylesheet" href="{{asset('template/assets/css/lib/vector-map/jqvmap.min.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{asset('template/assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="{{asset('template/assets/scss/style.css')}}">
     <script src="js/jquery-1.11.0.min.js"></script>
     <link
         href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
@@ -52,7 +66,7 @@
     <nav class="top-nav">
         <ul class="top-nav">
             <li><a href="/" class="active">Home</a></li>
-            <li><a href="{{route ('info_bencana')}}">Info kejadian Bencana</a></li>
+            <li><a href="about.html">Info Bencana</a></li>
             <li><a href="contact.html">Peta Rawan Bencana</a></li>
             <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
         </ul>
@@ -68,7 +82,7 @@
         <div class="container">
             <div class="build-mian">
                 <div class="col-md-12 build-left">
-                    <h1>Peringatan Dini <span>Bencana</span></h1>
+                    <h1>Info <span>Bencana</span></h1>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -86,53 +100,36 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-condensed table-bordered">
                             <thead class="thead-dark">
-                                <th>nama-bencana</th>
-                                <th>lokasi-bencana</th>
-                                <th>penyebab</th>
-                                <th>tanggal</th>
-                                <th>jam</th>
-                                <th>status-bencana</th>
-                                <th>keterangan</th>
-                            </thead>
-                            <tbody>
-                                @foreach ($peringatan as $item)
+                                <th>no</th>
+                                            <th>kabupaten</th>
+                                            <th>nama bencana</th>
+                                            <th>Tanggal </th>
+                                            <th>Waktu </th>
+                                            <th> Lokasi </th>
+                                            <th>keterangan</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($kejadian_bencana as $item)
 
-                                    <tr>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->lokasi }}</td>
-                                        <td>{{ $item->penyebab }}</td>
-                                        <td>{{ $item->tanggal }}</td>
-                                        <td>{{ $item->jam }}</td>
-                                        <td>
-                                            @if ($item->flag_level == 1)
-                                            <span class="label label-success">
-                                                @elseif ($item->flag_level == 2)
-                                            <span class="label label-info">
-                                                @elseif ($item->flag_level == 3)
-                                            <span class="label label-warning">
-                                                @elseif ($item->flag_level == 4)
-                                                <span class="label label-danger">
-                                            @endif
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $item->kabupaten->nama }}</td>
+                                                <td>{{ $item->jenis_bencana->nama }}</td>
+                                                <td>{{ $item->tanggal }}</td>
+                                                <td>{{ $item->waktu }}</td>
+                                                <td>{{ $item->lokasi }}</td>
+                                                <td>{{ $item->keterangan }}</td>
 
-                                            {{ $item->Status }}
-                                        </span>
-                                        </td>
-                                        <td>
-                                            @if ($item->flag_level == 1)
-                                                <span class="label label-success">
-                                                    @elseif ($item->flag_level == 2)
-                                                <span class="label label-info">
-                                                    @elseif ($item->flag_level == 3)
-                                                <span class="label label-warning">
-                                                    @elseif ($item->flag_level == 4)
-                                                    <span class="label label-danger">
-                                                @endif
-                                                {{ $item->keterangan }}</span>
-                                        </td>
 
-                                    </tr>
+                                                <td>
+                                                    <a href="{{ route('info_bencana.show', $item->id) }}" class="btn btn-sm btn-info">
+                                                        <i class="fa fa-eye"></i>
+                                                </td>
+                                            </tr>
+                                    @endforeach
 
-                                @endforeach
                             </tbody>
                         </table>
                     </div>

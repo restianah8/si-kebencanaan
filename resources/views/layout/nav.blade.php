@@ -44,18 +44,17 @@
                         </ul>
                     </li>
                     <li>
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="menu-icon fa fa-table"></i> publik</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="menu-icon fa fa-info"></i><a href="{{ route('laporan_masyarakat.index') }}"> </i>Laporan Masyarakat</a>
+                                <li><i class="menu-icon fa fa-info"></i><a href="{{ route('peringatan.index') }}"></i>peringatan dini</a>
+                                <li><i class="menu-icon fa fa-info"></i><a href="{{ route('berita.index') }}"></i>berita</a>
+                         </ul>
+                    </li>
+                    <li>
                         <a href="/dashboard/laporan"> <i class="menu-icon fa fa-file"></i>Laporan </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('laporan_masyarakat.index') }}"> <i class="menu-icon fa fa-info"></i>Laporan Masyarakat</a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('peringatan.index') }}"> <i class="menu-icon fa fa-info"></i>peringatan dini</a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('berita.index') }}"> <i class="menu-icon fa fa-info"></i>berita</a>
                     </li>
 
                     <li><br><br><br>

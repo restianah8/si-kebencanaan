@@ -41,22 +41,23 @@
               @php
               $no = '1'
                @endphp
+               <tbody>
               @foreach ($kelurahan as $item)
-              <tbody>
+
 
                 <tr>
                   <td>{{$no++}}</td>
                   <td>{{ $item->kecamatan->nama }}</td>
                   <td>{{$item->nama}}</td>
                     <td>
-                   
+
                     <a href="/dashboard/kelurahan/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
                     <a href="/dashboard/kelurahan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
 
               </tr>
-            </tbody>
             @endforeach
+        </tbody>
           </table>
                 </div>
             </div>

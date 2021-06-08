@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Peringatan Dini Bencana</title>
+    <title>{{ $berita->judul }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -64,16 +64,7 @@
     <!--end-header-->
 
     <!--start-build-->
-    <div class="build" style="margin-top: 20px">
-        <div class="container">
-            <div class="build-mian">
-                <div class="col-md-12 build-left">
-                    <h1>Peringatan Dini <span>Bencana</span></h1>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+
     <!--End-build-->
 
     </script>
@@ -82,60 +73,26 @@
     <div class="clients">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-condensed table-bordered">
-                            <thead class="thead-dark">
-                                <th>nama-bencana</th>
-                                <th>lokasi-bencana</th>
-                                <th>penyebab</th>
-                                <th>tanggal</th>
-                                <th>jam</th>
-                                <th>status-bencana</th>
-                                <th>keterangan</th>
-                            </thead>
-                            <tbody>
-                                @foreach ($peringatan as $item)
+                <div class="col-12 mt-5">
+                    <div class="panel">
+                        <div class="panel-heading">
+                           <h1> {{ $berita->judul }}</h1>
+                        </div>
+                        <div class="panel-body">
+                            @isset($berita->media[0])
+                            <div class="text-center">
+                                <img src="{{ $berita->media[0]->getFullUrl() }}" alt=""
+                                    class="img img-rounded img-thumbnail img-responsive"
+                                    style="max-width: 50%; max-height: 50%;">
+                            </div>
+                            @endisset
 
-                                    <tr>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->lokasi }}</td>
-                                        <td>{{ $item->penyebab }}</td>
-                                        <td>{{ $item->tanggal }}</td>
-                                        <td>{{ $item->jam }}</td>
-                                        <td>
-                                            @if ($item->flag_level == 1)
-                                            <span class="label label-success">
-                                                @elseif ($item->flag_level == 2)
-                                            <span class="label label-info">
-                                                @elseif ($item->flag_level == 3)
-                                            <span class="label label-warning">
-                                                @elseif ($item->flag_level == 4)
-                                                <span class="label label-danger">
-                                            @endif
-
-                                            {{ $item->Status }}
-                                        </span>
-                                        </td>
-                                        <td>
-                                            @if ($item->flag_level == 1)
-                                                <span class="label label-success">
-                                                    @elseif ($item->flag_level == 2)
-                                                <span class="label label-info">
-                                                    @elseif ($item->flag_level == 3)
-                                                <span class="label label-warning">
-                                                    @elseif ($item->flag_level == 4)
-                                                    <span class="label label-danger">
-                                                @endif
-                                                {{ $item->keterangan }}</span>
-                                        </td>
-
-                                    </tr>
-
-                                @endforeach
-                            </tbody>
-                        </table>
+                            <div class="mt-2">
+                                {{ $berita->isi }}
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

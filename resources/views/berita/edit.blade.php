@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('title')
-    Tambah Data berita
+   edit Data berita
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Tambah Data berita</h1>
+                <h1>edit Data berita</h1>
             </div>
         </div>
     </div>
@@ -24,21 +24,23 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="{{ route('berita.tambah') }}" method="post" novalidate="novalidate">
+                              <form action=" {{ route('berita.update',  $berita->id)}}" method="post" novalidate="novalidate">
                                 @csrf
-
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="judul">judul:</label>
-                                    <input type="text" name="judul" id="judul" class="form-control" required="required">
+                                    <input type="text" name="judul" value="{{ $berita->judul }}"
+                                    id="judul" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="isi">isi:</label>
-                                    <input type="text" name="isi" id="isi" class="form-control" required="required">
+                                    <input type="text" name="isi" value="{{ $berita->isi }}"
+                                    id="isi" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <input type="submit" value="Tambah Data" class="btn btn-primary">
+                                    <input type="submit" value="simpan Data" class="btn btn-primary">
                                 </div>
                               </form>
                           </div>

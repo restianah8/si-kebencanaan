@@ -39,22 +39,22 @@
                 <th>Aksi</th>
               </tr>
             </thead>
-            @foreach ($kecamatan as $item)
             <tbody>
+            @foreach ($kecamatan as $item)
 
               <tr>
                 <td>{{ ($loop->index + 1) }}</td>
                 <td>{{$item->kabupaten->nama}}</td>
                 <td>{{$item->nama}}</td>
                 <td>
-                    
+
                     <a href="/dashboard/kecamatan/edit/{{ $item->id }}" class=" mb-2 fa fa-edit bg-warning p-2 text-white rounded"></a>
                     <a href="/dashboard/kecamatan/hapus/{{ $item->id }}" onclick="return confirm('Yakin Ingin Menghapus Data')" class=" mb-2 fa fa-trash bg-danger p-2 text-white rounded"></a>
                 </td>
               </tr>
 
-            </tbody>
             @endforeach
+        </tbody>
           </table>
                 </div>
             </div>

@@ -51,9 +51,8 @@
     <!--start-top-nav-->
     <nav class="top-nav">
         <ul class="top-nav">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">Info Bencana</a></li>
-            <li><a href="404.html">Data Bencana</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="{{route ('info_bencana')}}">Info kejadian Bencana</a></li>
             <li><a href="contact.html">Peta Rawan Bencana</a></li>
             <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
         </ul>
@@ -69,7 +68,7 @@
         <div class="container">
             <div class="build-mian">
                 <div class="col-md-12 build-left">
-                    <h1>Laporkan<span>Bencana</span></h1>
+                    <h1><span>Laporkan Bencana</span></h1>
                     <p>Laporkan kejadian bencana di sekitar</p>
                 </div>
                 <div class="clearfix"></div>
