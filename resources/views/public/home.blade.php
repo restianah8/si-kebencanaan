@@ -42,11 +42,15 @@
                 <div class="row">
 
                     <div class="col-lg-4">
-                        <div class="box" data-aos="fade-up" data-aos-delay="200">
-                            <img src="{{ asset('assets/illustrations/prakiraan-cuaca.svg') }}" class="img-fluid" alt="">
-                            <h3>Cuaca</h3>
-                            <p>Informasi prakiraan cuaca Provinsi Bengkulu</p>
-                        </div>
+                        <a href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg?Prov=05&NamaProv=Bengkulu"
+                            target="_blank">
+                            <div class="box" data-aos="fade-up" data-aos-delay="200">
+                                <img src="{{ asset('assets/illustrations/prakiraan-cuaca.svg') }}" class="img-fluid"
+                                    alt="">
+                                <h3>Cuaca</h3>
+                                <p>Informasi prakiraan cuaca Provinsi Bengkulu</p>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0">
@@ -60,11 +64,13 @@
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="box" data-aos="fade-up" data-aos-delay="600">
-                            <img src="{{ asset('assets/illustrations/peringatan.svg') }}" class="img-fluid" alt="">
-                            <h3>Peringatan Dini</h3>
-                            <p>Informasi peringatan dini bencana di Provinsi Bengkulu</p>
-                        </div>
+                        <a href="{{ route('peringatan_dini') }}">
+                            <div class="box" data-aos="fade-up" data-aos-delay="600">
+                                <img src="{{ asset('assets/illustrations/peringatan.svg') }}" class="img-fluid" alt="">
+                                <h3>Peringatan Dini</h3>
+                                <p>Informasi peringatan dini bencana di Provinsi Bengkulu</p>
+                            </div>
+                        </a>
                     </div>
 
                 </div>

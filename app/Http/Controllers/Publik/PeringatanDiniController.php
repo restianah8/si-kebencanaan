@@ -12,6 +12,6 @@ class PeringatanDiniController extends Controller
     {
         $peringatan = Peringatan::all();
 
-        return view('publik.peringatan_dini.index', compact('peringatan'));
+        return view('public.peringatan_dini.index', compact('peringatan'));
     }
 }

@@ -34,7 +34,7 @@ Route::get('/', [PublikHomeController::class, 'index'])->name('home');
 // })->middleware(['auth'])->name('dashboard');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
-    Route::get('/', [HomeController::class, 'dashboard']);
+    Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
 
 
     //start: kabupaten

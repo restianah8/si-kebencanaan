@@ -41,6 +41,7 @@
         a:hover {
             text-decoration: none
         }
+
         table.info tr td:first-child {
             width: 35%
         }
@@ -55,7 +56,7 @@
     <nav class="top-nav">
         <ul class="top-nav">
             <li><a href="/" class="active">Home</a></li>
-            <li><a href="{{route ('info_bencana')}}">Info kejadian Bencana</a></li>
+            <li><a href="{{ route('info_bencana') }}">Info kejadian Bencana</a></li>
             <li><a href="contact.html">Peta Rawan Bencana</a></li>
             <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
         </ul>
@@ -84,146 +85,151 @@
     <div class="clients">
         <div class="container">
 
-           <div class="row">
-               <div class="col-12">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3>{{ $kejadian_bencana->jenis_bencana->nama }}</h3>
+            <div class="row">
+                <div class="col-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3>{{ $kejadian_bencana->jenis_bencana->nama }}</h3>
 
-                    </div>
-                    <div class="panel-body">
-                        <table class="table info table-striped table-condensed table-bordered">
-                            <tr>
-                                <td>id_kecamatan</td>
-                                <td>{{ $kejadian_bencana->kecamatan->nama }}</td>
-                            </tr>
-                            <tr>
-                                <td>id_kelurahan</td>
-                                <td>{{ $kejadian_bencana->kelurahan->nama }}</td>
-                            </tr>
-                            <tr>
-                                <td>jumalh kejadian</td>
-                                <td>{{ $kejadian_bencana->jumlah}}</td>
-                            </tr>
-                            <tr>
-                                <td>korban meninggal dan hilang</td>
-                                <td>{{ $kejadian_bencana->meninggal_hilang }}</td>
-                            </tr>
-                            <tr>
-                                <td>korban luka-luka</td>
-                                <td>{{ $kejadian_bencana->luka_luka}}</td>
-                            </tr>
-                            <tr>
-                                <td>Korban mengungsi dan terdampak</td>
-                                <td>{{ $kejadian_bencana->mengungsi_terdampak }}</td>
-                            </tr>
-                            <tr>
-                                <td>rumah RB</td>
-                                <td>{{ $kejadian_bencana->rumah_RB}}</td>
-                            </tr>
-                            <tr>
-                                <td>rumah RR</td>
-                                <td>{{ $kejadian_bencana->rumah_RR}}</td>
-                            </tr>
-                            <tr>
-                                <td>rumah RS</td>
-                                <td>{{ $kejadian_bencana->rumah_RS}}</td>
-                            </tr>
-                            <tr>
-                                <td>rumah terendam</td>
-                                <td>{{ $kejadian_bencana->rumah_terendam}}</td>
-                            </tr>
-                            <tr>
-                                <td>kerusakan fasilitas pendidikan</td>
-                                <td>{{ $kejadian_bencana->fasilitas_pendidikan}}</td>
-                            </tr>
-                            <tr>
-                                <td>kerusakan fasilitas ibada</td>
-                                <td>{{ $kejadian_bencana->fasilitas_peribadatan}}</td>
-                            </tr>
-                            <tr>
-                                <td>kerusakan fasilitas kesehatan</td>
-                                <td>{{ $kejadian_bencana->fasilitas_kesehatan}}</td>
-                            </tr>
-                            <tr>
-                                <td>kerusakan fasilitas perkantoran</td>
-                                <td>{{ $kejadian_bencana->fasilitas_perkantoran}}</td>
-                            </tr>
-                            <tr>
-                                <td>jembatan</td>
-                                <td>{{ $kejadian_bencana->jembatan}}</td>
-                            </tr>
-                            <tr>
-                                <td>hutan</td>
-                                <td>{{ $kejadian_bencana->hutan}}</td>
-                            </tr>
-                            <tr>
-                                <td>lahan</td>
-                                <td>{{ $kejadian_bencana->lahan}}</td>
-                            </tr>
-                            <tr>
-                                <td>sawah</td>
-                                <td>{{ $kejadian_bencana->sawah}}</td>
-                            </tr>
-                            <tr>
-                                <td>kebun</td>
-                                <td>{{ $kejadian_bencana->kebun}}</td>
-                            </tr>
-                            <tr>
-                                <td>luas kerusakan</td>
-                                <td>{{ $kejadian_bencana->luas}}</td>
-                            </tr>
-                            <tr>
-                                <td>taksir kerugian</td>
-                                <td>{{ $kejadian_bencana->taksir_kerugian}}</td>
-                            </tr>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table info table-striped table-condensed table-bordered">
+                                <tr>
+                                    <td>id_kecamatan</td>
+                                    <td>{{ $kejadian_bencana->kecamatan->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>id_kelurahan</td>
+                                    <td>{{ $kejadian_bencana->kelurahan->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>jumalh kejadian</td>
+                                    <td>{{ $kejadian_bencana->jumlah }}</td>
+                                </tr>
+                                <tr>
+                                    <td>korban meninggal dan hilang</td>
+                                    <td>{{ $kejadian_bencana->meninggal_hilang }}</td>
+                                </tr>
+                                <tr>
+                                    <td>korban luka-luka</td>
+                                    <td>{{ $kejadian_bencana->luka_luka }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Korban mengungsi dan terdampak</td>
+                                    <td>{{ $kejadian_bencana->mengungsi_terdampak }}</td>
+                                </tr>
+                                <tr>
+                                    <td>rumah RB</td>
+                                    <td>{{ $kejadian_bencana->rumah_RB }}</td>
+                                </tr>
+                                <tr>
+                                    <td>rumah RR</td>
+                                    <td>{{ $kejadian_bencana->rumah_RR }}</td>
+                                </tr>
+                                <tr>
+                                    <td>rumah RS</td>
+                                    <td>{{ $kejadian_bencana->rumah_RS }}</td>
+                                </tr>
+                                <tr>
+                                    <td>rumah terendam</td>
+                                    <td>{{ $kejadian_bencana->rumah_terendam }}</td>
+                                </tr>
+                                <tr>
+                                    <td>kerusakan fasilitas pendidikan</td>
+                                    <td>{{ $kejadian_bencana->fasilitas_pendidikan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>kerusakan fasilitas ibada</td>
+                                    <td>{{ $kejadian_bencana->fasilitas_peribadatan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>kerusakan fasilitas kesehatan</td>
+                                    <td>{{ $kejadian_bencana->fasilitas_kesehatan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>kerusakan fasilitas perkantoran</td>
+                                    <td>{{ $kejadian_bencana->fasilitas_perkantoran }}</td>
+                                </tr>
+                                <tr>
+                                    <td>jembatan</td>
+                                    <td>{{ $kejadian_bencana->jembatan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>hutan</td>
+                                    <td>{{ $kejadian_bencana->hutan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>lahan</td>
+                                    <td>{{ $kejadian_bencana->lahan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>sawah</td>
+                                    <td>{{ $kejadian_bencana->sawah }}</td>
+                                </tr>
+                                <tr>
+                                    <td>kebun</td>
+                                    <td>{{ $kejadian_bencana->kebun }}</td>
+                                </tr>
+                                <tr>
+                                    <td>luas kerusakan</td>
+                                    <td>{{ $kejadian_bencana->luas }}</td>
+                                </tr>
+                                <tr>
+                                    <td>taksir kerugian</td>
+                                    <td>{{ $kejadian_bencana->taksir_kerugian }}</td>
+                                </tr>
 
-                            <var><tr>
-                        </var>
-                            <tr>
-                                <td>Foto</td>
-                                <td>
-                                    @isset($kejadian_bencana->media[0])
-                                        <img src="{{ $kejadian_bencana->media[0]->getFullUrl() }}" class="img-fluid">
-                                    @else
-                                        Tidak ada foto
-                                    @endisset
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="mapouter">
-                                        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
-                                                src="https://maps.google.com/maps?q={{ $kejadian_bencana->lokasi_kejadian }}&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                                frameborder="0" scrolling="no" marginheight="0"
-                                                marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br>
-                                            <style>
-                                                .mapouter {
-                                                    position: relative;
-                                                    text-align: right;
-                                                    height: 500px;
-                                                    width: 600px;
-                                                }
+                                <var>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>Foto</td>
+                                        <td>
+                                            @isset($kejadian_bencana->media[0])
+                                                <img src="{{ $kejadian_bencana->media[0]->getFullUrl() }}"
+                                                    class="img-fluid">
+                                            @else
+                                                Tidak ada foto
+                                            @endisset
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="mapouter">
+                                                <div class="gmap_canvas"><iframe width="600" height="500"
+                                                        id="gmap_canvas"
+                                                        src="https://maps.google.com/maps?q={{ $kejadian_bencana->lokasi_kejadian }}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                                        frameborder="0" scrolling="no" marginheight="0"
+                                                        marginwidth="0"></iframe><a
+                                                        href="https://putlocker-is.org"></a><br>
+                                                    <style>
+                                                        .mapouter {
+                                                            position: relative;
+                                                            text-align: right;
+                                                            height: 500px;
+                                                            width: 600px;
+                                                        }
 
-                                            </style><a href="https://www.embedgooglemap.net">google maps html</a>
-                                            <style>
-                                                .gmap_canvas {
-                                                    overflow: hidden;
-                                                    background: none !important;
-                                                    height: 500px;
-                                                    width: 600px;
-                                                }
+                                                    </style><a href="https://www.embedgooglemap.net">google maps
+                                                        html</a>
+                                                    <style>
+                                                        .gmap_canvas {
+                                                            overflow: hidden;
+                                                            background: none !important;
+                                                            height: 500px;
+                                                            width: 600px;
+                                                        }
 
-                                            </style>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                                                    </style>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-               </div>
-           </div>
+            </div>
         </div>
     </div>
     <!--end-clients-->
@@ -236,7 +242,7 @@
         <div class="container">
             <div class="touch-main">
                 <div class="col-md-5 touch-left">
-                    <h3>ALAMAT BPBD  BENGKULU</h3>
+                    <h3>ALAMAT BPBD BENGKULU</h3>
                     <p>34789 Magic City Avenue, Los Angeles, CA, 94048</p>
                     <p>Call: 123 456 789
                     <p>

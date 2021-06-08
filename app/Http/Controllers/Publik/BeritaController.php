@@ -10,7 +10,7 @@ class BeritaController extends Controller
 {
     public function show(Berita $berita)
     {
-        return view('publik.berita.show', compact('berita'));
+        return view('public.berita.show', compact('berita'));
     }
 
 }

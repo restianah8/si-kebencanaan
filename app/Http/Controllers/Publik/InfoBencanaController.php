@@ -12,11 +12,11 @@ class InfoBencanaController extends Controller
     {
         $kejadian_bencana = Kejadian_bencana::orderBy('created_at', 'DESC')->limit(3)->get();
 
-        return view('publik.info_bencana.index', compact('kejadian_bencana'));
+        return view('public.info_bencana.index', compact('kejadian_bencana'));
     }
     public function show(Kejadian_bencana $kejadian_bencana)
     {
-        return view('publik.info_bencana.show', compact('kejadian_bencana'));
+        return view('public.info_bencana.show', compact('kejadian_bencana'));
     }
 
 }
