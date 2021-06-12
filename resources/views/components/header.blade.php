@@ -7,8 +7,10 @@
             <span>BPBD</span>
         </a>
 
+
         <nav id="navbar" class="navbar">
             <ul>
+
                 <li><a class="nav-link active" href="{{ route('home') }}">Beranda</a></li>
                 <li><a class="nav-link " href="{{ route('info_bencana') }}">Info Bencana</a></li>
                 <li><a class="nav-link " href="#services">Peta Rawan Bencana</a></li>
@@ -17,6 +19,12 @@
                 @else
                     <li><a class="getstarted " href="{{ route('login') }}">Login</a></li>
                 @endif
+
+                    <a href="https://twitter.com/BpbdBengkulu" class="twitter"><li class="fa fa-twitter"></li></a>
+                    <a href="https://www.facebook.com/siagabencana.provinsi.5" class="facebook"><li class="bi bi-facebook"></li></a>
+                    <a href="https://instagram.com/bpbdprovbengkulu?utm_medium=copy_link" class="instagram"><li class="bi bi-instagram bx bxl-instagram"></li></a>
+
+
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

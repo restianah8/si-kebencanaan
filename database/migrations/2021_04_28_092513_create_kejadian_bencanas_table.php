@@ -24,10 +24,12 @@ class CreateKejadianBencanasTable extends Migration
             $table->time('waktu');
             $table->string('lokasi',40);
             $table->string('jumlah',10);
-            $table->string('meninggal_hilang',10);
-            $table->string('luka_luka', 60);
-            $table->string('mengungsi_terdampak', 60);
-            $table->string('rumah_RB', 60);
+            $table->string('meninggal',10);
+            $table->string('hilang',10);
+            $table->string('luka_luka', 10);
+            $table->string('mengungsi', 10);
+            $table->string('terdampak', 10);
+            $table->string('rumah_RB', 10);
             $table->string('rumah_RR', 10);
             $table->string('rumah_RS',10);
             $table->string('rumah_terendam',20);
@@ -41,6 +43,8 @@ class CreateKejadianBencanasTable extends Migration
             $table->string('sawah',10);
             $table->string('kebun',10);
             $table->string('luas_kerusakan',10);
+            $table->string('penyebab',100);
+            $table->string('upaya',100);
             $table->string('keterangan',200);
             $table->double('taksir_kerugian',10,2);
 

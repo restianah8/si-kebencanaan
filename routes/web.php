@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
@@ -76,7 +78,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'edit']);
     Route::put('/kejadian_bencana/edit/{kejadian_bencana}', [Kejadian_bencanaController::class, 'update']);
     Route::get('/kejadian_bencana/hapus/{kejadian_bencana}', [Kejadian_bencanaController::class, 'destroy']);
-
+    Route::get('export_excel', 'UsersController@export');
+    Route::get('/export_excel', [Kejadian_bencanaController::class,'export_excel'])->name('export_excel');
+    Route::get('/kejadian_bencana/cetak_pdf', 'Kejadian_bencanaController@cetak_pdf');
+    Route::get('/pdf', [Kejadian_bencanaController::class,'pdf'])->name('pdf');
 
 
 
@@ -99,6 +104,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
      Route::get('/berita/edit{berita}', [BeritaController::class, 'edit'])->name('berita.edit');
      Route::put('/berita/edit{berita}', [BeritaController::class, 'update'])->name('berita.update');
      Route::get('/berita/hapus{berita}', [BeritaController::class, 'destroy'])->name('berita.hapus');
+
+      Route::get('/chart', [ChartController::class, 'index'])->name('chart.index');
 });
 
 Route::get('/lapor-bencana', [LaporanBencanaController::class, 'create'])->name('lapor_bencana.lapor');

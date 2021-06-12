@@ -14,13 +14,11 @@
         </div>
     </div>
     <div class="col-sm-12">
-        <div class="page-header float-right mt-2">
-            <a href="/dashboard/kejadian_bencana/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
-                Tambah</a>
-        </div>
-    </div>
-
     <div class="content mt-3">
+        <a href="/dashboard/kejadian_bencana/tambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
+            Tambah</a>
+        <a href="{{route('export_excel')}}" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
+        <a href="{{route('pdf')}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
         <div class="animated fadeIn">
             <div class="row">
 
@@ -38,18 +36,20 @@
                                             <th>id_kabupaten</th>
                                             <th>id_kecamatan</th>
                                             <th>id_kelurahan</th>
-                                            <th>id_jenis bencana</th>
+                                            <th>id_jenis_bencana</th>
                                             <th>Tanggal </th>
                                             <th>Waktu </th>
-                                            <th> Lokasi </th>
+                                            <th> Lokasi_kejadian </th>
                                             <th>jumlah</th>
-                                            <th>meninggal & hilang</th>
-                                            <th>luka luka</th>
-                                            <th>mengungsi & terdampak</th>
+                                            <th>korban_meninggal</th>
+                                            <th>korban_hilang</th>
+                                            <th>korban_lukaluka</th>
+                                            <th>korban_mengungsi</th>
+                                            <th>korban_terdampak</th>
                                             <th>rumah_RB</th>
                                             <th>rumah_RR</th>
                                             <th>rumah_RS</th>
-                                            <th>Rumah Terendam</th>
+                                            <th>Rumah_Terendam</th>
                                             <th>fasilitas_pendidikan</th>
                                             <th>fasilitas_ibada</th>
                                             <th>fasilitas_perkantoran</th>
@@ -59,7 +59,9 @@
                                             <th>lahan</th>
                                             <th>sawah</th>
                                             <th>kebun</th>
-                                            <th>luas</th>
+                                            <th>luas_kerusakan</th>
+                                            <th>penyebab</th>
+                                            <th>upaya</th>
                                             <th>keterangan</th>
                                             <th>taksir_kerugian</th>
                                             <th>Aksi</th>
@@ -78,9 +80,11 @@
                                                 <td>{{ $item->waktu }}</td>
                                                 <td>{{ $item->lokasi }}</td>
                                                 <td>{{ $item->jumlah }}</td>
-                                                <td>{{ $item->meninggal_hilang }}</td>
+                                                <td>{{ $item->meninggal }}</td>
+                                                <td>{{ $item->hilang }}</td>
                                                 <td>{{ $item->luka_luka }}</td>
-                                                <td>{{ $item->mengungsi_terdampak }}</td>
+                                                <td>{{ $item->mengungsi }}</td>
+                                                <td>{{ $item->terdampak }}</td>
                                                 <td>{{ $item->rumah_RB }}</td>
                                                 <td>{{ $item->rumah_RR }}</td>
                                                 <td>{{ $item->rumah_RS }}</td>
@@ -95,6 +99,8 @@
                                                 <td>{{ $item->sawah }}</td>
                                                 <td>{{ $item->kebun }}</td>
                                                 <td>{{ $item->luas_kerusakan }}</td>
+                                                <td>{{ $item->penyebab }}</td>
+                                                <td>{{ $item->upaya }}</td>
                                                 <td>{{ $item->keterangan }}</td>
                                                 <td>{{ number_format($item->taksir_kerugian, 2, ',', '.') }}</td>
 

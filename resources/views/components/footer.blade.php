@@ -3,51 +3,45 @@
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
+          <div class="col-lg-6 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
-              <img src="{{ asset('public/assets/img/logo.png') }}" alt="">
-              <span>FlexStart</span>
+              <img src="{{ asset('public/assets/img/bpbd.png') }}" alt="">
+              <span>BPBD</span>
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
-            </div>
+            <h4>Visi</h4><p>Menjadi institusi terdepan dalam mewujudkan masyarakat Provinsi
+                 Bengkulu yang siap siaga, tanggap dan tangguh dalam menghadapi bencana</p>
+
+            <h4>Misi</h4>
+            <p>Melindungi masyarakat dari ancaman bencana melalui penyelenggaraan penanggulangan bencana yang terencana, terpadu dan terkoordinasi.
+                Mengurangi risiko bencana dengan melaksanakan upaya pencegahan dan mitigasi serta kesiapsiagaan menghadapi bencana.
+                Melaksanakan tindakan cepat tanggap dalam penanggulangan bencana.
+                Memulihkan dampak bencana menuju kehidupan masyarakat yang stabil, aman dan terkendali.</p>
+
+          </div>
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                                <h4>Pusdalops</h4>
+                                <p>
+                                    JL.P.NATADIRJA KM.7 Kota Bengkulu<br>
+                                <strong>Phone:</strong> (0736)-349674<br>
+                                <strong>Email:</strong> bpbdbkl@gmail.com<br>
+                                </p>
+                    </div>
+
+          <div class="col-lg-3 col-6 footer-links">
+
+            </button>
+            </button>
+            <h4>Links sosial media</h4>
+                <div class="social-links mt-4">
+                    <a href="https://twitter.com/BpbdBengkulu" class="twitter"><li class="fa fa-twitter"></li></a>
+                    <a href="https://www.facebook.com/siagabencana.provinsi.5" class="facebook"><li class="bi bi-facebook"></li></a>
+                    <a href="https://instagram.com/bpbdprovbengkulu?utm_medium=copy_link" class="instagram"><li class="bi bi-instagram bx bxl-instagram"></li></a>
+
+                </div>
           </div>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
 
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
 
           </div>
 
@@ -55,16 +49,5 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+
   </footer><!-- End Footer -->

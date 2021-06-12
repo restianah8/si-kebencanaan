@@ -83,7 +83,7 @@
     <div class="header" id="home">
         <div class="container">
             <div class="logo ">
-                <a href="#"><img src="menu/images/bpbd.png" alt="" style="width:120px; " /></a>
+                <a href="#"><img src="menu/images/bpbd.png" alt="" style="width:200pt; " /></a>
             </div>
 
         </div>

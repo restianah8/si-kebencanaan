@@ -11,8 +11,11 @@
 
             <div class="row gy-4">
                 <div class="col-lg-12">
+                    <div class="text-center">
                     @isset($berita->media[0])
-                        <img src="{{ $berita->media[0]->getFullUurl() }}" alt="" class="img-fluid">
+                       <div> <img src="{{ $berita->media[0]->getFullUrl() }}" alt=""
+                        class="img-fluid"
+                        style="max-width: 40%; max-height: 50%;">></div>
                     @endisset
                     {{ $berita->isi }}
                 </div>

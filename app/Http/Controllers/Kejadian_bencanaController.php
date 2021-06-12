@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use App\Models\Jenis_bencana;
 use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use App\Models\Kejadian_bencana;
 use App\Models\Kelurahan;
+use App\Exports\Kejadian_bencanaExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class Kejadian_bencanaController extends Controller
 {
@@ -57,9 +61,11 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->waktu = $request->input('waktu');
         $kejadian_bencana->lokasi = $request->input('lokasi');
         $kejadian_bencana->jumlah = $request->input('jumlah');
-        $kejadian_bencana->meninggal_hilang = $request->input('meninggal_hilang');
+        $kejadian_bencana->meninggal = $request->input('meninggal');
+        $kejadian_bencana->hilang = $request->input('hilang');
         $kejadian_bencana->luka_luka = $request->input('luka_luka');
-        $kejadian_bencana->mengungsi_terdampak = $request->input('mengungsi_terdampak');
+        $kejadian_bencana->mengungsi = $request->input('mengungsi');
+        $kejadian_bencana->terdampak = $request->input('terdampak');
         $kejadian_bencana->rumah_RB = $request->input('rumah_RB');
         $kejadian_bencana->rumah_RR = $request->input('rumah_RR');
         $kejadian_bencana->rumah_RS = $request->input('rumah_RS');
@@ -74,6 +80,8 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->sawah = $request->input('sawah');
         $kejadian_bencana->kebun = $request->input('kebun');
         $kejadian_bencana->luas_kerusakan = $request->input('luas_kerusakan');
+        $kejadian_bencana->penyebab = $request->input('penyebab');
+        $kejadian_bencana->upaya = $request->input('upaya');
         $kejadian_bencana->keterangan = $request->input('keterangan');
         $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
 
@@ -131,9 +139,11 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->waktu = $request->input('waktu');
         $kejadian_bencana->lokasi = $request->input('lokasi');
         $kejadian_bencana->jumlah = $request->input('jumlah');
-        $kejadian_bencana->meninggal_hilang = $request->input('meninggal_hilang');
+        $kejadian_bencana->meninggal = $request->input('meninggal');
+        $kejadian_bencana->hilang = $request->input('hilang');
         $kejadian_bencana->luka_luka = $request->input('luka_luka');
-        $kejadian_bencana->mengungsi_terdampak = $request->input('mengungsi_terdampak');
+        $kejadian_bencana->mengungsi = $request->input('mengungsi');
+        $kejadian_bencana->terdampak = $request->input('terdampak');
         $kejadian_bencana->rumah_RB = $request->input('rumah_RB');
         $kejadian_bencana->rumah_RR = $request->input('rumah_RR');
         $kejadian_bencana->rumah_RS = $request->input('rumah_RS');
@@ -148,8 +158,12 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->sawah = $request->input('sawah');
         $kejadian_bencana->kebun = $request->input('kebun');
         $kejadian_bencana->luas_kerusakan = $request->input('luas_kerusakan');
+        $kejadian_bencana->penyebab = $request->input('penyebab');
+        $kejadian_bencana->upaya = $request->input('upaya');
         $kejadian_bencana->keterangan = $request->input('keterangan');
         $kejadian_bencana->taksir_kerugian = $request->input('taksir_kerugian');
+
+
 
         $kejadian_bencana->save();
 
@@ -172,4 +186,17 @@ class Kejadian_bencanaController extends Controller
             ->to('/dashboard/kejadian_bencana')
             ->withSuccess('Berhasil menghapus data');
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new Kejadian_bencanaExport, 'kejadian_bencana.xlsx');
+	}
+    public function cetak_pdf()
+    {
+    	$pegawai = Pegawai::all();
+
+    	$pdf = PDF::loadview('pegawai_pdf',['pegawai'=>$pegawai]);
+    	return $pdf->download('laporan-pegawai-pdf');
+    }
+
 }
