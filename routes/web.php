@@ -12,11 +12,13 @@ use App\Http\Controllers\Jenis_bencanaController;
 use App\Http\Controllers\Kejadian_bencanaController;
 use App\Http\Controllers\LaporanMasyarakatController;
 use App\Http\Controllers\PeringatanController;
+use App\Http\Controllers\PetarawanbencanaController;
 use App\Http\Controllers\Publik\BeritaController as PublikBeritaController;
 use App\Http\Controllers\Publik\HomeController as PublikHomeController;
 use App\Http\Controllers\Publik\InfoBencanaController as PublikInfoBencanaController;
 use App\Http\Controllers\Publik\LaporanBencanaController;
 use App\Http\Controllers\Publik\PeringatanDiniController as PublikPeringatanDiniController;
+use App\Http\Controllers\publik\PetarawanbencanaController as PublikPetarawanbencanaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,6 +108,17 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
      Route::get('/berita/hapus{berita}', [BeritaController::class, 'destroy'])->name('berita.hapus');
 
       Route::get('/chart', [ChartController::class, 'index'])->name('chart.index');
+
+    //peta
+    Route::get('/petarawanbencana', [PetarawanbencanaController::class, 'index'])->name('peta.index');
+     Route::get('/petarawanbencana/tambah', [PetarawanbencanaController::class, 'create'])->name('peta.tambah');
+     Route::post('/petarawanbencana/tambah', [PetarawanbencanaController::class, 'store'])->name('peta.simpan');
+     Route::get('/petarawanbencana/edit{petarawanbencana}', [PetarawanbencanaController::class, 'edit'])->name('peta.edit');
+     Route::put('/petarawanbencana/edit{petarawanbencana}', [PetarawanbencanaController::class, 'update'])->name('peta.update');
+     Route::get('/petarawanbencana/hapus{petarawanbencana}', [PetarawanbencanaController::class, 'destroy'])->name('peta.hapus');
+
+
+
 });
 
 Route::get('/lapor-bencana', [LaporanBencanaController::class, 'create'])->name('lapor_bencana.lapor');
@@ -113,9 +126,14 @@ Route::post('/lapor-bencana', [LaporanBencanaController::class, 'store'])->name(
 
 Route::get('/info_bencana', [PublikInfoBencanaController::class, 'index'])->name('info_bencana');
 Route::get('/info_bencana/{kejadian_bencana}', [PublikInfoBencanaController::class, 'show'])->name('info_bencana.show');
+
 Route::get('/peringatan-bencana', [PublikPeringatanDiniController::class, 'index'])->name('peringatan_dini');
+Route::get('/petarawanbencana', [PublikPetarawanbencanaController::class, 'index'])->name('peta');
 
 Route::get('/berita/{berita}', [PublikBeritaController::class, 'show'])->name('berita.read');
+
+
+
 
 
 require __DIR__ . '/auth.php';

@@ -24,28 +24,33 @@
                       <!-- Credit Card -->
                       <div id="pay-invoice">
                           <div class="card-body">
-                              <form action="/dashboard/kejadian_bencana/tambah" method="post" novalidate="novalidate">
+                              <form action="/dashboard/kejadian_bencana/tambah" method="post"
+                                novalidate="novalidate" enctype="multipart/form-data">
                                 @csrf
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label for="jenis_bencana">jenis_bencana:</label>
-                                    <select name="id_jenis_bencana" id="jenis_bencana" class="form-control">
-                                        @foreach ($jenis_bencana as $item)
-                                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                                        @endforeach
-                                    </select>
-                                   </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="kabupaten">kabupaten:</label>
-                                        <select name="id_kabupaten" id="kabupaten" class="form-control">
-                                            @foreach ($kabupaten as $item)
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                        <label for="jenis_bencana">jenis_bencana:</label>
+                                        <select name="id_jenis_bencana" id="jenis_bencana" class="form-control">
+                                            @foreach ($jenis_bencana as $item)
                                                 <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                             @endforeach
                                         </select>
+                                       </div>
                                     </div>
-                                 </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="kabupaten">kabupaten:</label>
+                                            <select name="id_kabupaten" id="kabupaten" class="form-control">
+                                                @foreach ($kabupaten as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                     </div>
+                                    </div>
+                                </div>
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -252,6 +257,11 @@
                                              <label for="keterangan">keterangan:</label>
                                             <input type="text" name="keterangan" id="keterangan" class="form-control" required="required">
                                        </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label for="foto">Foto Kejadian:</label>
+                                            <input type="file" name="foto" id="foto"
+                                                class="form-control  @error('foto') is-invalid @enderror">
                                          </div>
                                          <div class="col-md-6">
                                             <div class="form-group">

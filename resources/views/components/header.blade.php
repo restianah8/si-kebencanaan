@@ -13,7 +13,7 @@
 
                 <li><a class="nav-link active" href="{{ route('home') }}">Beranda</a></li>
                 <li><a class="nav-link " href="{{ route('info_bencana') }}">Info Bencana</a></li>
-                <li><a class="nav-link " href="#services">Peta Rawan Bencana</a></li>
+                <li><a class="nav-link " href="{{ route('peta')}}">Peta Rawan Bencana</a></li>
                 @if (auth()->check())
                     <li><a class="getstarted " href="{{ route('dashboard') }}">Dasbor</a></li>
                 @else

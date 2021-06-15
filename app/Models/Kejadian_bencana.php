@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class Kejadian_bencana extends Model
+class Kejadian_bencana extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, HasMediaTrait;
     public $table = 'kejadian_bencana';
     protected $fillable = [
         'id_jenis_bencana','id_kabupaten','id_kecamatan','id_kelurahan','tanggal','waktu','lokasi','jumlah','meninggal','hilang','luka_luka','mengungsi','terdampak','rumah_RB','rumah_RR','rumah_RS','rumah_terendam','fasilitas_pendidikan','fasilitas_peribadatan','fasilitas_perkantoran','fasilitas_kesehatan','jembatan','hutan','lahan','sawah','kebun','luas_kerusakan','penyebab','upaya','keterangan','taksir_kerugian'

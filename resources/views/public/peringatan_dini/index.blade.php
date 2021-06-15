@@ -34,13 +34,13 @@
                                             <td>{{ $item->jam }}</td>
                                             <td>
                                                 @if ($item->flag_level == 1)
-                                                    <span class="label label-success">
+                                                    <span class="badge bg-success">
                                                     @elseif ($item->flag_level == 2)
-                                                        <span class="label label-info">
+                                                        <span class="badge bg-info">
                                                         @elseif ($item->flag_level == 3)
-                                                            <span class="label label-warning">
+                                                            <span class="badge bg-warning">
                                                             @elseif ($item->flag_level == 4)
-                                                                <span class="label label-danger">
+                                                                <span class="badge bg-danger">
                                                 @endif
 
                                                 {{ $item->Status }}
@@ -48,13 +48,13 @@
                                             </td>
                                             <td>
                                                 @if ($item->flag_level == 1)
-                                                    <span class="label label-success">
+                                                    <span class="badge bg-success">
                                                     @elseif ($item->flag_level == 2)
-                                                        <span class="label label-info">
+                                                        <span class="badge bg-info">
                                                         @elseif ($item->flag_level == 3)
-                                                            <span class="label label-warning">
+                                                            <span class="badge bg-warning">
                                                             @elseif ($item->flag_level == 4)
-                                                                <span class="label label-danger">
+                                                                <span class="badge bg-danger">
                                                 @endif
                                                 {{ $item->keterangan }}</span>
                                             </td>

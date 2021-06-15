@@ -31,7 +31,7 @@
                     <li>
 
                     <li>
-                        <a href="/dashboard/peta_rawan_bencana"> <i class="menu-icon fa fa-users"></i>Peta Rawan Bencana </a>
+                        <a href={{ route('peta.index')}}> <i class="menu-icon fa fa-users"></i>Peta Rawan Bencana </a>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
@@ -53,7 +53,7 @@
                                 <li><i class="menu-icon fa fa-info"></i><a href="{{ route('berita.index') }}"></i>berita</a>
                          </ul>
                     </li>
-                   
+
 
                     <li><br><br><br>
                         <div class="col-sm-8">

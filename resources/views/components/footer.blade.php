@@ -1,5 +1,5 @@
 <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+<footer id="footer" class="footer" style="background: #f7750c">
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">

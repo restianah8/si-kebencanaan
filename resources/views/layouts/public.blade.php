@@ -31,6 +31,21 @@
 
     @yield('custom_head')
 
+    <style>
+        #header {
+            background: #f7750c;
+        }
+        #header a {
+            color: white
+        }
+        #header a:hover {
+            color: #4154f1
+        }
+        #header .getstarted a:hover {
+            color: white
+        }
+    </style>
+
     <!-- =======================================================
   * Template Name: FlexStart - v1.4.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/

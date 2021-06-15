@@ -165,9 +165,9 @@
             <div class="row gy-12">
              <div class="row gy-3">
                 <div class="col-md-3">
-                  <div class="info-box">
-                    <i class="bi bi-geo-alt"></i>
-                    <h3>Address</h3>
+                  <div class="info-box" style="background: #f7750c; color: white">
+                    <i class="bi bi-geo-alt text-white"></i>
+                    <h3 class="text-white">Address</h3>
                     <p>JL.P.NATADIRJA KM.7 Kota Bengkulu</p>
                   </div>
                 </div>

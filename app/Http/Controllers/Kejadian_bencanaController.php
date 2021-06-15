@@ -88,6 +88,10 @@ class Kejadian_bencanaController extends Controller
         $kejadian_bencana->created_at = date('Y-m-d H:i:s');
 
         $kejadian_bencana->save();
+        if ($request->has('foto') && $request->file('foto')->isValid()) {
+            $kejadian_bencana->addMediaFromRequest('foto')
+                ->toMediaCollection('foto_kejadian_bencana');
+        }
 
         return redirect()
             ->to('/dashboard/kejadian_bencana')

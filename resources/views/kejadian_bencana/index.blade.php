@@ -63,6 +63,7 @@
                                             <th>penyebab</th>
                                             <th>upaya</th>
                                             <th>keterangan</th>
+                                            <th>foto</th>
                                             <th>taksir_kerugian</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -102,6 +103,13 @@
                                                 <td>{{ $item->penyebab }}</td>
                                                 <td>{{ $item->upaya }}</td>
                                                 <td>{{ $item->keterangan }}</td>
+                                                <td>
+                                                    @isset($item->media[0])
+                                                <img src="{{ $item->media[0]->getFullUrl() }}" class="img-fluid">
+                                            @else
+                                                Tidak ada foto
+                                            @endisset
+                                                </td>
                                                 <td>{{ number_format($item->taksir_kerugian, 2, ',', '.') }}</td>
 
                                                 <td>
