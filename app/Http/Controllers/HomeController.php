@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jenis_bencana;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -43,6 +44,8 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $jenis_bencana = Jenis_bencana::all();
+
+        return view('dashboard', compact('jenis_bencana'));
     }
 }
