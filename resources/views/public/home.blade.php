@@ -91,10 +91,47 @@
                     <p>Prakiraan Cuaca Kota Bengkulu</p>
                 </header>
              <div class="row">
-                <div class="col-lg-2">
-                    <img src="{{ asset('assets/illustrations/home-hero.svg') }}" class="img-fluid" alt="">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Gempa Terkini</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tr>
+                                    <td>Magnitudo
+                                        <br>
+                                        {{ $gempa->Magnitude }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Kedalaman
+                                        <br>
+                                        {{ $gempa->Kedalaman }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Lokasi
+                                        <br>
+                                        {{ $gempa->Lintang }} - {{ $gempa->Bujur }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{ $gempa->Wilayah }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ $gempa->Potensi }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="https://www.bmkg.go.id/gempabumi/gempabumi-dirasakan.bmkg" target="_blank" class="btn btn-info text-white">Selengkapnya</a>
+                    </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <a class="weatherwidget-io" href="https://forecast7.com/en/n3d79102d26/bengkulu/"
                      data-label_1="BENGKULU" data-label_2="WEATHER" data-theme="original" >BENGKULU WEATHER</a>
                     <script>
