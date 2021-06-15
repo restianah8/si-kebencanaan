@@ -36,7 +36,7 @@
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="menu-icon fa fa-table"></i>Data Kabupaten</a>
+                            <i class="menu-icon fa fa-table"></i>Data wilayah</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="/dashboard/data_kabupaten">Kabupaten</a></li>
                             <li><i class="fa fa-table"></i><a href="/dashboard/kecamatan">Kecamatan</a></li>
@@ -53,9 +53,7 @@
                                 <li><i class="menu-icon fa fa-info"></i><a href="{{ route('berita.index') }}"></i>berita</a>
                          </ul>
                     </li>
-                    <li>
-                        <a href="/dashboard/laporan"> <i class="menu-icon fa fa-file"></i>Laporan </a>
-                    </li>
+                   
 
                     <li><br><br><br>
                         <div class="col-sm-8">
