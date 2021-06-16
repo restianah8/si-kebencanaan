@@ -43,35 +43,38 @@
 
                 <div class="row">
 
-                    <div class="col-lg-4 mt-3 mt-lg-0">
+                    <div class="col-lg-4 mt-6 mt-lg-0" >
                         <a href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg?Prov=05&NamaProv=Bengkulu"
                             target="_blank">
-                            <div class="box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="box" data-aos="fade-up" data-aos-delay="200"
+                            style="background: #f7750c; color: white">
                                 <img src="{{ asset('menu/images/cu.jpg') }}" class="img-fluid"
                                     alt="" style="width:280px;">
-                                <h3>Cuaca</h3>
-                                <p>Informasi prakiraan cuaca Provinsi Bengkulu</p>
+                                <h3 class="text-white">Cuaca</h3>
+                                <p class="text-white">Informasi prakiraan cuaca Provinsi Bengkulu</p>
                             </div>
                         </a>
                     </div>
 
-                    <div class="col-lg-4 mt-3 mt-lg-0">
+                    <div class="col-lg-4 mt-6 mt-lg-0" >
                         <a href="{{ route('lapor_bencana.lapor') }}">
-                            <div class="box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="box" data-aos="fade-up" data-aos-delay="400"
+                            style="background: #f7750c; color: white">
                                 <img src="{{ asset('menu/images/por.jpg') }}" class="img-fluid" alt="" style="width:280px;">
-                                <h3>Laporan kejadian Bencana</h3>
-                                <p>Laporkan kejadian bencana di sekitar dari masyrakat</p>
+                                <h3 class="text-white">Laporan kejadian Bencana</h3>
+                                <p class="text-white">Laporkan kejadian bencana di sekitar dari masyrakat</p>
                             </div>
                         </a>
                     </div>
 
-                    <div class="col-lg-4 mt-3 mt-lg-0">
+                    <div class="col-lg-4 mt-6 mt-lg-0">
                         <a href="{{ route('peringatan_dini') }}">
-                            <div class="box aos-init" data-aos="fade-up" data-aos-delay="600">
+                            <div class="box aos-init" data-aos="fade-up" data-aos-delay="600"
+                            style="background: #f7750c; color: white">
                                 <img src="{{ asset('menu/images/pering.jpg')}}" class="img-fluid" alt="" style="width:260px;">
-                                <h3>Peringatan Dini</h3>
+                                <h3 class="text-white">Peringatan Dini</h3>
 
-                                <p>Informasi peringatan dini bencana di Provinsi Bengkulu</p>
+                                <p class="text-white">Informasi peringatan dini bencana di Provinsi Bengkulu</p>
                             </div>
                         </a>
                     </div>
@@ -88,18 +91,38 @@
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    <p>Prakiraan Cuaca Kota Bengkulu</p>
+                    <p>Prakiraan Cuaca Kota Bengkulu dan Gempa Terkini</p>
                 </header>
              <div class="row">
-                <div class="col-lg-6">
+                        <div class="col-md-6">
+                            <a class="weatherwidget-io" href="https://forecast7.com/en/n3d79102d26/bengkulu/"
+                            data-label_1="BENGKULU" data-label_2="WEATHER" data-theme="original" >BENGKULU WEATHER</a>
+                            <script>
+                            !function(d,s,id)
+                            {var js,fjs=d.getElementsByTagName(s)[0];
+                            if(!d.getElementById(id)){js=d.createElement(s);
+                            js.id=id;
+                            js.src='https://weatherwidget.io/js/widget.min.js';
+                            fjs.parentNode.insertBefore(js,fjs);}}
+                            (document,'script','weatherwidget-io-js');
+                            </script>
+                        </div>
+
+                <div class="col-md-6 col-xs-6">
+                    <div class="widget p20 mb30 aos-init" data-aos="fade-up" data-aos-delay="400">
                     <div class="card">
-                        <div class="card-header">
-                            <h5>Gempa Terkini</h5>
+                        <div class="card-header" style="background: #f7750c; color: white">
+                            <h5 >Gempa Terkini </h5>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-condensed">
                                 <tr>
-                                    <td>Magnitudo
+                                    <td>{{ $gempa->Tanggal }},
+                                        {{ $gempa->Jam}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td> Magnitudo
                                         <br>
                                         {{ $gempa->Magnitude }}
                                     </td>
@@ -131,19 +154,7 @@
                         <a href="https://www.bmkg.go.id/gempabumi/gempabumi-dirasakan.bmkg" target="_blank" class="btn btn-info text-white">Selengkapnya</a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <a class="weatherwidget-io" href="https://forecast7.com/en/n3d79102d26/bengkulu/"
-                     data-label_1="BENGKULU" data-label_2="WEATHER" data-theme="original" >BENGKULU WEATHER</a>
-                    <script>
-                    !function(d,s,id)
-                    {var js,fjs=d.getElementsByTagName(s)[0];
-                    if(!d.getElementById(id)){js=d.createElement(s);
-                    js.id=id;
-                    js.src='https://weatherwidget.io/js/widget.min.js';
-                    fjs.parentNode.insertBefore(js,fjs);}}
-                    (document,'script','weatherwidget-io-js');
-                    </script>
-                </div>
+
              </div> <!-- / row -->
             </div>
 
@@ -210,29 +221,28 @@
                 </div>
 
                 <div class="col-md-3">
-                  <div class="info-box">
-                    <i class="bi bi-telephone"></i>
-                    <h3>Call Us</h3>
-                    <p>(0736)-349674</p>
+                  <div class="info-box"style="background: #f7750c; color: white">
+                    <i class="bi bi-telephone text-white"></i>
+                    <h3 class="text-white">Call Us</h3>
+                    <p>(0736)-349674 <br>(0736)-349674 </p>
                   </div>
                 </div>
 
                 <div class="col-md-3">
-                  <div class="info-box">
-                    <i class="bi bi-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>bpbdbkl@gmail.com</p>
+                  <div class="info-box"style="background: #f7750c; color: white">
+                    <i class="bi bi-envelope text-white"></i>
+                    <h3 class="text-white">Email Us</h3>
+                    <p>bpbdbkl@gmail.com<br>BPBD@gmail.com </p>
                   </div>
                 </div>
 
                 <div class="col-md-3">
-                  <div class="info-box">
-                    <i class="bi bi-clock"></i>
-                    <h3>Open Hours</h3>
+                  <div class="info-box"style="background: #f7750c; color: white">
+                    <i class="bi bi-clock text-white"></i>
+                    <h3 class="text-white">Open Hours</h3>
                     <p>Senin - Jumat<br>8:00AM - 05:00PM</p>
                   </div>
                 </div>
-             </div>
             </div>
         </div>
 

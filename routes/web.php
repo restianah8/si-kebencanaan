@@ -97,6 +97,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
      Route::get('/peringatan', [PeringatanController::class, 'index'])->name('peringatan.index');
      Route::get('/peringatan/tambah', [PeringatanController::class, 'create'])->name('peringatan.tambah');
      Route::post('/peringatan/tambah', [PeringatanController::class, 'store'])->name('peringatan.simpan');
+     Route::get('/peringatan/edit{peringatan}', [PeringatanController::class, 'edit'])->name('peringatan.edit');
+     Route::put('/peringatan/edit{peringatan}', [PeringatanController::class, 'update'])->name('peringatan.update');
      Route::get('/peringatan/hapus{peringatan}', [PeringatanController::class, 'destroy'])->name('peringatan.hapus');
 
      //berita

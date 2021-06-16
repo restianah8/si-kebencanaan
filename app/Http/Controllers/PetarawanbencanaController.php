@@ -54,4 +54,48 @@ class PetarawanbencanaController extends Controller
      * @param  \App\Models\Jenis_bencana  $jenis_bencana
      * @return \Illuminate\Http\Response
      */
+    public function edit(Petarawanbencana $petarawanbencana)
+    {
+        return view('petarawanbencana.edit', compact('petarawanbencana'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Petarawanbencana $petarawanbencana)
+    {
+        $petarawanbencana->nama_peta = $request->input('nama_peta');
+        $petarawanbencana->diskripsi = $request->input('diskripsi');
+        $petarawanbencana->save();
+
+        if ($request->has('foto') && $request->file('foto')->isValid()) {
+            $petarawanbencana->addMediaFromRequest('foto')
+                ->toMediaCollection('foto_petarawanbencana');
+        }
+
+        return redirect()
+            ->to('/dashboard/petarawanbencana')
+            ->withSuccess('Berhasil menambah data');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Petarawanbencana $petarawanbencana)
+    {
+        $petarawanbencana->delete();
+
+        return redirect()
+            ->to('/dashboard/petarawanbencana')
+            ->withSuccess('Berhasil menghapus data');
+    }
 }
+
+
